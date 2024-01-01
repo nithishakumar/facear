@@ -55,7 +55,7 @@ The website for FaceAR: an AR mobile app to help patients with facial disabiliti
 
 Once the server is running, open a web browser and navigate to http://localhost:5000 (or the specified port if using a different one) to access the locally deployed React application.
 
-# Building, Deploying, and Serving the FaceAR Website to GitHub Pages
+# Building and Deploying the FaceAR Website to GitHub Pages
 
 1. Make sure the homepage in the package.json file contains the correct URL: https://nithishakumar.github.io/facear/
 2. Run the following command on a local terminal to deploy the site.
