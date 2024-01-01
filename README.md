@@ -1,6 +1,6 @@
 # FaceAR Website
 
-The website for FaceAR - an AR mobile app to help patients with facial disabilities perform facial exercises. FaceAR is being developed by 4 University of Michigan students with support from Michigan Medicine and funding from Snap, Inc. (Snapchat).
+The website for FaceAR - an AR mobile app to help patients with facial disabilities perform facial exercises. FaceAR is being developed by 4 University of Michigan students (Nithisha Nantha Kumar, Melissa Fang, Anisha Nahta, and Haihan Gao) with support from Michigan Medicine and funding from Snap, Inc. (Snapchat).
 
 # Building, Deploying, and Serving the FaceAR Website Locally
 
