@@ -62,4 +62,4 @@ Once the server is running, open a web browser and navigate to http://localhost:
    
 		npm run deploy
 
-4. Navigate to the settings of the repository, select "Pages" under "Code and Automation", and then make sure the branch deployed is the new gh-pages branch that was created and not "main".
+4. Navigate to the settings of the repository, select "Pages" under "Code and Automation", and then make sure the branch deployed is the new "gh-pages" branch that was created and not "main".
