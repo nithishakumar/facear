@@ -26,28 +26,28 @@ The website for FaceAR - an AR mobile app to help patients with facial disabilit
 
 		nvm use X.XX.X
 
-3.  When deploying to a local environment using localhost, set the homepage to "/" in the package.json file. If not, mention the correct homepage url (https://nithishakumar.github.io/facear/).
+3.  When deploying to a local environment using localhost, set the homepage to "/" in the package.json file. If not, mention the correct homepage URL (https://nithishakumar.github.io/facear/).
 
-	{
-  		"homepage": "/",
-  		// ... other configuration options
-	}
+		{
+  			"homepage": "/",
+  			// ... other configuration options
+		}
 
 4. Navigate to the project directory (navigate to the directory where your package.json file is located)
 
-	cd /path/to/your/project/directory
+		cd /path/to/your/project/directory
 
 5. Run the following command to install the project dependencies specified in the package.json file.
 
-	npm install
+		npm install
 
 6. Build the project
 
-	npm run build
+		npm run build
 
 7. Navigate to the build directory
 
-	cd /path/to/your/project/directory/build
+		cd /path/to/your/project/directory/build
 
 8. Serve the build files
 
