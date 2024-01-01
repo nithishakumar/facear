@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+  }
+
+.quote-container {
+    background-color: var(--c2);
+    display: flex;
+    flex-direction: row; /*Set the main axis to be the horizontal axis.*/
+    justify-content: center; /* Horizontally centers the content */
+    align-items: center; /* Vertically centers the content (cross axis is the vertical axis)*/
+    width: 100%; /*width is 100% of the viewport height*/
+    height: 80px; /*height is 10% of the viewport height*/
+}
+
+.quote-text {
+    color: var(--text_light);
+    font-size: 45px;
+    line-height: 80px;
+    position: absolute;
+    transform: translateY(50%);
+}

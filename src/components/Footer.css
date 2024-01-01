@@ -1,0 +1,53 @@
+.footer-container {
+    background: var(--c2);
+    width: 100%;
+    height: 80px;
+    bottom: 0;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    position: relative;
+
+    color: var(--text_light);
+}
+
+.footer-container * {
+    line-height: normal;
+}
+
+.footer-container h1 {
+    font-size: 25px;
+}
+
+.footer-contact {
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    margin-left: 50px;
+}
+
+.footer-contact-email {
+    position: absolute;
+    bottom: 100px;
+    right: 0;
+    margin-right: 50px;
+}
+
+.footer-logo {
+    /* Position Logo */
+    margin-left: 15px;
+    display: flex;
+    justify-self: start;
+    align-items: center;
+    /* Font Settings */
+    font-size: 1.6rem;
+}
+
+.footer-logo img {
+    height: 100px;
+    padding-left: 12px;
+    padding-bottom: 20px;
+}

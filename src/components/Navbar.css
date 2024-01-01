@@ -1,0 +1,133 @@
+.navbar * {
+    text-decoration: none;
+    color: var(--text_light);
+}
+
+.logo {
+    height: 50px;
+    padding-left: 12px;
+}
+
+.navbar {
+    /* Set Navbar Style */
+    background: var(--grey);
+    height: 80px;
+    /* Set Navbar Position */
+    top: 0;
+    position: sticky;
+    z-index: 999;
+    /* Center Items */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Font Settings */
+    font-size: 1.2rem;
+}
+
+.navbar-container {
+    /* Set Size */
+    height: 80px;
+    max-width: 1500px;
+    /* Center Items */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-logo {
+    /* Position Logo */
+    margin-left: 20px;
+    display: flex;
+    justify-self: start;
+    align-items: center;
+}
+
+.navbar-logo i {
+    margin-left: 0.8rem;
+    margin-right: 0.8rem;
+    font-size: 1.8rem;
+    --fa-rotate-angle: 20deg;
+}
+
+.nav-menu {
+    /* Position Items */
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 10px;
+    justify-content: end;
+    margin-right: 2rem;
+    /* Item Style */
+    list-style: none;
+    text-align: center;
+    width: 60vw;
+}
+
+.nav-item {
+    height: 80px;
+}
+
+.nav-link {
+    /* Position Item */
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 100%
+}
+
+.nav-link:hover {
+    border-bottom: 4px solid var(--secondary);
+    transition: all 0.2s ease-out;
+}
+
+.nav-menu-icon {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.nav-menu-icon i {
+    color: var(--secondary);
+}
+
+.fa-times {
+    font-size: 2rem;
+}
+
+@media screen and (max-width: 960px) {
+    .nav-menu {
+        /* Position Items */
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        left: -100%;
+    }
+    
+    .nav-menu.active {
+        background-color: var(--grey);
+        z-index: 1;
+        left: 0;
+    }
+
+    .nav-link {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+    
+    .nav-link:hover {
+        background-color: var(--secondary);
+        color: var(--grey);
+        border-bottom: 0px solid;
+    }
+
+    .nav-menu-icon {
+        display: block;
+    }
+}
