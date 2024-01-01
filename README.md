@@ -6,10 +6,10 @@ The website for FaceAR - an AR mobile app to help patients with facial disabilit
 
 1. Install Node.js, npm, and http-server (if you haven't installed them already)
 
-	sudo apt update
-	sudo apt install nodejs
-	sudo apt install npm
-	sudo npm install -g http-server
+		sudo apt update
+		sudo apt install nodejs
+		sudo apt install npm
+		sudo npm install -g http-server
 
 2. Update nodejs version if required
 
@@ -51,6 +51,6 @@ The website for FaceAR - an AR mobile app to help patients with facial disabilit
 
 8. Serve the build files
 
-	http-server -p 5000
+		http-server -p 5000
 
 Once the server is running, open a web browser and navigate to http://localhost:5000 (or the specified port if using a different one) to access the locally deployed React application.
