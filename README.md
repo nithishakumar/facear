@@ -59,5 +59,7 @@ Once the server is running, open a web browser and navigate to http://localhost:
 
 1. Make sure the homepage in the package.json file contains the correct URL: https://nithishakumar.github.io/facear/
 2. Run the following command on a local terminal to deploy the site.
-			npm run deploy
-3. Navigate to the settings of the repository, select "Pages" under "Code and Automation", and then make sure the branch deployed is the new gh-pages branch that was created and not "main".
+   
+		npm run deploy
+
+4. Navigate to the settings of the repository, select "Pages" under "Code and Automation", and then make sure the branch deployed is the new gh-pages branch that was created and not "main".
