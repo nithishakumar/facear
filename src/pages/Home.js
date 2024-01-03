@@ -5,6 +5,7 @@ import TextBox from '../components/TextBox'
 import Footer from '../components/Footer';
 import Spacer from '../components/Spacer';
 import '../App.css';
+import Button from '../components/Button';
 
 function Home() {
 
@@ -20,10 +21,20 @@ function Home() {
         <Spacer color='bg-img off_white' />
         <TextBox title={`Watch FaceAR in action!`} desc={[]}
           image=""
-          button_text="GTM Plan"
-          button_link="/GTMPlan"
+          button_text=""
+          button_link=""
           youtubeEmbedCode="dZJAAmF_aQg" 
           color="center bg-img grey"
+        />
+      </div>
+      <div>
+        <Button
+        text={'GTM Plan'}
+        link={'/GTMPlan'}
+        />
+        <Button
+        text={'Development Blog'}
+        link={'/dev-blog'}
         />
       </div>
       <Spacer color='bg-img grey' />

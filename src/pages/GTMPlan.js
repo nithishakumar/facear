@@ -9,10 +9,7 @@ function GTMPlan({ title }) {
 
   return (
     <>
-      <Spacer color='bg-img grey' />
-      <div id='title'>
-        <Quote text={'GTM Plan'}/>
-      </div>
+      <Quote text={'GTM Plan'} />
       <div id='textBox'>
         <TextBox title={`Phase 1: Refinement`} desc={[
             "Beta test at Michigan Medicine & nearby hospitals for ~3 months, alter app’s features accordingly, create pricing plan, & create marketing materials from user feedback."
