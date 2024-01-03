@@ -3,16 +3,32 @@ import TextBox from '../components/TextBox'
 import Footer from '../components/Footer';
 import Spacer from '../components/Spacer';
 import '../App.css';
+import Quote from '../components/Quote';
 
 function GTMPlan({ title }) {
 
   return (
     <>
-      <Spacer color='bg-img grey' />
+      <Quote text={'GTM Plan'} />
       <div id='textBox'>
-        <TextBox title={`What is FaceAR?`} desc={[
-            "FaceAR ---rtual environment.",
-            "With FaceAR, ------.",
+        <TextBox title={`Phase 1: Refinement`} desc={[
+            "Beta test at Michigan Medicine & nearby hospitals for ~3 months, alter app’s features accordingly, create pricing plan, & create marketing materials from user feedback."
+          ]}
+          image=""
+          button_text=""
+          youtubeEmbedCode=""
+          color="bg-img grey"
+        />
+        <TextBox title={`Phase 2: Sales`} desc={[
+            "Sell FaceAR to hospitals & other healthcare providers in the US - whose patients would be able to use the app for free."
+          ]}
+          image=""
+          button_text=""
+          youtubeEmbedCode=""
+          color="bg-img grey"
+        />
+        <TextBox title={`Phase 3: Expansion`} desc={[
+            "Partner with medical software distributors like Epic and/or societies like Facial Therapy Specialists International."
           ]}
           image=""
           button_text=""
