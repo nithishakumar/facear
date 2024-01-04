@@ -4,7 +4,7 @@ The website for FaceAR: an AR mobile app to help patients with facial disabiliti
 
 # Building, Deploying, and Serving the FaceAR Website Locally
 
-1. Install Node.js, npm, and http-server (if you haven't installed them already) (If you are using a mac replace "sudo apt" with "brew")
+1. Install Node.js, npm, and http-server (if you haven't installed them already). If you are using a mac replace "sudo apt" with "brew".
 
 		sudo apt update
 		sudo apt install nodejs
