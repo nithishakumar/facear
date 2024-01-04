@@ -2,11 +2,17 @@ import React from 'react';
 import '../App.css';
 import './Quote.css';
 
-function Quote({ text }) {
+function Quote({ text, color }) {
+
+    let container_classname = "quote-container "
+    container_classname += color
+
     return (
-        <div className="quote-container">
-            <h1 className="quote-text">{text}</h1>
-        </div>
+        <>
+            <div className={container_classname}>
+                <h1>{text}</h1>
+            </div>
+        </>
     );
 }
 

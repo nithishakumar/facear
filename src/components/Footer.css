@@ -19,26 +19,12 @@
 }
 
 .footer-container h1 {
-    font-size: 25px;
-}
-
-.footer-contact {
-    position: absolute;
-    bottom: 100px;
-    left: 0;
-    margin-left: 50px;
-}
-
-.footer-contact-email {
-    position: absolute;
-    bottom: 100px;
-    right: 0;
-    margin-right: 50px;
+    font-size: 1.0rem;
 }
 
 .footer-logo {
     /* Position Logo */
-    margin-left: 15px;
+    margin-left: 20px;
     display: flex;
     justify-self: start;
     align-items: center;
@@ -47,7 +33,6 @@
 }
 
 .footer-logo img {
-    height: 100px;
+    height: 50px;
     padding-left: 12px;
-    padding-bottom: 20px;
 }

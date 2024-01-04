@@ -9,7 +9,7 @@ function Button({ text, link }) {
     const routeChange = () =>{ 
         let path = `${link}`;
 
-        if (path.substring(0, 4) === "http")
+        if (path.substring(0, 4) === "http" || path.substring(0, 6) === "mailto")
         {
             window.location.href = path;
             return null;

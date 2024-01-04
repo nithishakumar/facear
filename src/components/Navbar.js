@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import '../App.css';
 import './Navbar.css';
 
-export default function Navbar() {
+export default function Navbar({ title }) {
     const [click, setClick] = useState(false);
 
     const handleClick = () => setClick(!click);

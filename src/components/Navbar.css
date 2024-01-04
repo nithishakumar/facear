@@ -40,6 +40,8 @@
     display: flex;
     justify-self: start;
     align-items: center;
+    /* Font Settings */
+    font-size: 2rem;
 }
 
 .navbar-logo i {

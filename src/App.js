@@ -6,7 +6,6 @@ import Home from './pages/Home';
 import GTMPlan from './pages/GTMPlan'
 import DevBlog from './pages/DevBlog';
 import ScrollToTop from './utils/ScrollToTop';
-import './fonts/ITCAvantGardeStd-Bk.ttf'
 
 function App() {
 
@@ -16,11 +15,11 @@ function App() {
     <>
     <Router basename={process.env.PUBLIC_URL}>
       <ScrollToTop />
-      <Navbar/>
+      <Navbar title={title} />
       <Routes>
-        <Route path='/' exact Component={() => <Home/> }/>
-        <Route path='/GTMPlan' exact Component={() => <GTMPlan title={title} />} />
-        <Route path='/dev-blog' exact Component={() => <DevBlog title={title} />} />
+        <Route path='/' exact Component={() => <Home title={title} /> }/>
+        <Route path='/GTMPlan' exact Component={() => <GTMPlan title={'GTM Plan'} />} />
+        <Route path='/dev-blog' exact Component={() => <DevBlog title={'DevBlog'} />} />
       </Routes>
     </Router>
     </>

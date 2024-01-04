@@ -5,40 +5,32 @@ import TextBox from '../components/TextBox'
 import Footer from '../components/Footer';
 import Spacer from '../components/Spacer';
 import '../App.css';
-import Button from '../components/Button';
 
-function Home() {
+function Home({ title }) {
 
   return (
     <>
       <div id="home">
-        <Hero />
+        <Hero/>
       </div>
       <Quote 
         text="Augmented Reality for Facial Rehabilitation." 
+        color="grey" 
       />
-      <div>
-        <Spacer color='bg-img off_white' />
-        <TextBox title={`Watch FaceAR in action!`} desc={[]}
+      <div id='about'>
+        <Spacer color='bg-img grey' />
+        <TextBox title={`Watch FaceAR in action!`} desc={[
+            "FaceAR is being built by Nithisha Nantha Kumar, Melissa Fang, Anisha Nahta, and Haihan Gao with support from Michigan Medicine and funding from Snap, Inc. (Snapchat).",
+          ]}
           image=""
-          button_text=""
-          button_link=""
+          button_text="Contact Us!"
+          button_link="mailto:facearteam@umich.edu"
           youtubeEmbedCode="dZJAAmF_aQg" 
           color="center bg-img grey"
         />
+        <Spacer color='bg-img grey' />
       </div>
-      <div>
-        <Button
-        text={'GTM Plan'}
-        link={'/GTMPlan'}
-        />
-        <Button
-        text={'Development Blog'}
-        link={'/dev-blog'}
-        />
-      </div>
-      <Spacer color='bg-img grey' />
-      <Footer color="grey" />
+      <Footer title={title} color="grey" />
     </>
   );
 
