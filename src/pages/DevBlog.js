@@ -3,6 +3,7 @@ import Post from '../components/Post';
 import '../App.css';
 import Footer from '../components/Footer';
 import Spacer from '../components/Spacer';
+import Quote from '../components/Quote';
 
 
 function DevBlog({ title }) {
@@ -64,8 +65,8 @@ function DevBlog({ title }) {
         img: "",
         youtubeEmbedCode: "",
         text: [
-          "Balance the ball: this game is specifically intended for patients who have weakened muscles on one side of the face, like those with Bell’s palsy. When a user performs an exercise, the game compares the exercise’s accuracy on the weakened side with the healthy side. Users can balance a moving ball based on how similar, that is, balanced, the exercise is on both sides of their face. This is a relatively easy game that the patient can play mid-recovery.\n",
-          "Jump Game: similar to the dinosaur game on chrome when that one can play when they’re not connected to the internet, one has to prevent a smiley face (instead of a dino) from touching an obstacle in this game by raising their eyebrows when necessary. This is a hard game that the patient can choose to play when they’re closer to recovery."
+          " - Balance the ball: this game is specifically intended for patients who have weakened muscles on one side of the face, like those with Bell’s palsy. When a user performs an exercise, the game compares the exercise’s accuracy on the weakened side with the healthy side. Users can balance a moving ball based on how similar, that is, balanced, the exercise is on both sides of their face. This is a relatively easy game that the patient can play mid-recovery.\n",
+          " - Jump Game: similar to the dinosaur game on chrome when that one can play when they’re not connected to the internet, one has to prevent a smiley face (instead of a dino) from touching an obstacle in this game by raising their eyebrows when necessary. This is a hard game that the patient can choose to play when they’re closer to recovery."
         ]
       },
       {
@@ -98,10 +99,10 @@ function DevBlog({ title }) {
         text: [
           "To help users verify the accuracy of facial exercises that involve both the face and the hand, we intend to use hand tracking along with face-tracking simultaneously. We wanted to find face/hand tracking libraries that worked on both Android and iOS.\n",
           "Currently, we found that ARKit’s BlendShapes functionality works well for face-tracking and verifying the accuracy of facial exercises that only involve the face. However, this feature is only available on iOS. We looked into finding other face-tracking libraries with functionalities similar to ARKit’s BlendShapes and hand-tracking libraries that worked well with ARKit and/or worked on Android devices. Following are the options we found this week:\n",
-          "Manomotion: a hand-tracking library that we intend to use in combination with ARKit’s BlendShapes. However, Manomotion is only supported on 2019 Unity Editors which have older versions of ARFoundation. These older versions of ARFoundation may not support newer face-tracking features of ARKit/ARFoundation. ARKit + Manomotion still limits us to only iOS device users. We will verify whether ARKit’s BlendShapes still works properly in 2019 Unity Editors and if so, we will consider Manomotion + ARKit BlendShapes to be a possible combination for our hand and face-tracking libraries.\n",
-          "Alchera: a library that performs both face and hand tracking simultaneously. We were excited to use this library but the GitHub repository for this library was missing a .dll file due to which we couldn’t incorporate the library into our project.\n",
-          "OpenCV: it seems like a good choice for face-tracking but we couldn’t find its free version this week. We’re looking into whether this library would work better than ARKit’s BlendShapes if combined with Manomotion since it is available on both Android and iOS.\n",
-          "ARKit: it has body-tracking functionalities that could be used to detect both the face and the hand. However, it doesn’t provide detailed information about the position of various parts of the hand/facial regions. It also limits our app’s accessibility to iOS.\n",
+          " - Manomotion: a hand-tracking library that we intend to use in combination with ARKit’s BlendShapes. However, Manomotion is only supported on 2019 Unity Editors which have older versions of ARFoundation. These older versions of ARFoundation may not support newer face-tracking features of ARKit/ARFoundation. ARKit + Manomotion still limits us to only iOS device users. We will verify whether ARKit’s BlendShapes still works properly in 2019 Unity Editors and if so, we will consider Manomotion + ARKit BlendShapes to be a possible combination for our hand and face-tracking libraries.\n",
+          " - Alchera: a library that performs both face and hand tracking simultaneously. We were excited to use this library but the GitHub repository for this library was missing a .dll file due to which we couldn’t incorporate the library into our project.\n",
+          " - OpenCV: it seems like a good choice for face-tracking but we couldn’t find its free version this week. We’re looking into whether this library would work better than ARKit’s BlendShapes if combined with Manomotion since it is available on both Android and iOS.\n",
+          " - ARKit: it has body-tracking functionalities that could be used to detect both the face and the hand. However, it doesn’t provide detailed information about the position of various parts of the hand/facial regions. It also limits our app’s accessibility to iOS.\n",
           "So, we have to choose between ARKit alone, ARKit + Manomotion, and OpenCV + Manomotion."
         ]
       },
@@ -150,15 +151,16 @@ function DevBlog({ title }) {
   }
 
   return (
+    <>
+    <Quote text={'Development Timeline'} />
     <div className='bg-img'>
-      <h1>Development Timeline</h1>
       <Post post={post1} />
       <Post post={post2} />
       <Post post={post3} />
       <Post post={post4} />
       <Spacer color='bg-img grey' />
       <Footer color="grey" />
-    </div>
+    </div></>
   );
 }
 

@@ -23,7 +23,8 @@ function Post({ post }) {
                                     <img src={process.env.PUBLIC_URL + `/img/${topic.img}`}></img>
                                 )}
                                 {topic.youtubeEmbedCode === "" ? (<></>) : (
-                                    <iframe title="Youtube Player" src={`https://www.youtube.com/embed/${topic.youtubeEmbedCode}`}/>
+                                    <div className='post-video'><iframe title="Youtube Player" src={`https://www.youtube.com/embed/${topic.youtubeEmbedCode}`}/>
+                                    </div>
                                 )}
                                 <p>{topic.text.map((text) =>
                                     <p>{text}</p>
