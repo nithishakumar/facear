@@ -20,7 +20,7 @@ function Home({ title }) {
       <div id='about'>
         <Spacer color='bg-img grey' />
         <TextBox title={`Watch FaceAR in action!`} desc={[
-            "FaceAR is being built by Nithisha Nantha Kumar, Melissa Fang, Anisha Nahta, and Haihan Gao with support from Michigan Medicine and funding from Snap, Inc. (Snapchat).",
+            "FaceAR is being built by Nithisha Nantha Kumar, Melissa Fang, Anisha Nahta, and Haihan Gao with clinical support from Michigan Medicine and funding from Snap, Inc. (Snapchat).",
           ]}
           image=""
           button_text="Contact Us!"
