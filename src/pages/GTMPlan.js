@@ -9,12 +9,12 @@ function GTMPlan({ title }) {
 
   return (
     <>
-      <Quote text={title} />
+      <Quote text={title} color="dimgrey"/>
       <div id='textBox'>
         <TextBox title={`Phase 1: Refinement`} desc={[
             "Beta test at Michigan Medicine & nearby hospitals for ~3 months, alter app’s features accordingly, create pricing plan, & create marketing materials from user feedback."
           ]}
-          image=""
+          image="Refinement Image.jpg"
           button_text=""
           youtubeEmbedCode=""
           color="bg-img grey"
@@ -22,7 +22,7 @@ function GTMPlan({ title }) {
         <TextBox title={`Phase 2: Sales`} desc={[
             "Sell FaceAR to hospitals & other healthcare providers in the US - whose patients would be able to use the app for free."
           ]}
-          image=""
+          image="Sales Image.png"
           button_text=""
           youtubeEmbedCode=""
           color="bg-img grey"
@@ -30,7 +30,7 @@ function GTMPlan({ title }) {
         <TextBox title={`Phase 3: Expansion`} desc={[
             "Partner with medical software distributors like Epic and/or societies like Facial Therapy Specialists International."
           ]}
-          image=""
+          image="Expansion Image.jpg"
           button_text=""
           youtubeEmbedCode=""
           color="bg-img grey"
