@@ -1,0 +1,19 @@
+.footer {
+  background-color: #494956;
+  color: #fff;
+  padding: 20px 0;
+}
+.footer-logo {
+  width: 50px;
+  height: auto;
+  justify-content: center;
+  margin-right: 10px;
+}
+.footer-links a {
+  color: #fff;
+  margin-right: 15px;
+}
+.footer-links a:hover {
+  color: #ccc;
+  text-decoration: none;
+}

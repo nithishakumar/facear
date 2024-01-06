@@ -1,28 +1,31 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import GTMPlan from './pages/GTMPlan'
-import DevBlog from './pages/DevBlog';
-import ScrollToTop from './utils/ScrollToTop';
+import FaceARNavbar from './FaceARNavbar';
+import IntroBanner from './IntroBanner';
+import EmbedVideo  from './EmbedVideo';
+import Features from './Features';
+import { Container } from 'react-bootstrap';
+import Footer from "./Footer.js";
+import FaceARTrailer from "./videos/FaceARTrailer.mp4"
 
 function App() {
-
-  const title = "FaceAR";;
-
   return (
-    <>
-    <Router basename={process.env.PUBLIC_URL}>
-      <ScrollToTop />
-      <Navbar title={title} />
-      <Routes>
-        <Route path='/' exact Component={() => <Home title={title} /> }/>
-        <Route path='/GTMPlan' exact Component={() => <GTMPlan title={'GTM Plan'} />} />
-        <Route path='/dev-blog' exact Component={() => <DevBlog title={'DevBlog'} />} />
-      </Routes>
-    </Router>
-    </>
+    <div className="App">
+      <FaceARNavbar/>
+      <Container>
+      <div className='p-2 mb-1'></div> {/*Spacer*/}
+        <div>
+          <IntroBanner />
+        </div>
+        <div className='p-4 mb-1'>
+          <EmbedVideo videoSrc={FaceARTrailer} />
+        </div>
+        <div className='p-4 mb-1'>
+          <Features />
+        </div>
+        <div className='p-4 mb-1'></div> {/*Spacer*/}
+      </Container>
+      <Footer/>
+    </div>
   );
 }
 
