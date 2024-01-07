@@ -4,7 +4,7 @@ The website for FaceAR: an AR mobile app to help patients with facial disabiliti
 
 # Start a Development Server for the FaceAR Website Locally
 
-1. Install npm and yarn (if you haven't installed them already). If you are using a mac replace "sudo apt" with "brew".
+1. Install npm and yarn (if you haven't installed them already). If you're using a mac replace "sudo apt" with "brew".
 
 		sudo apt update
 		sudo apt install npm
@@ -14,11 +14,11 @@ The website for FaceAR: an AR mobile app to help patients with facial disabiliti
 
 		yarn add bootstrap react-bootstrap
 
-3. Run the command below to install react-router
+3. Run the command below to install react-router.
 
 		yarn add react-router-dom
 
-3. Start a development server for testing
+3. Start a development server for testing.
 
 		yarn start
 
@@ -26,7 +26,7 @@ There's no need to restart the development server after making changes. Just sav
 
 # Building and Deploying the FaceAR Website to GitHub Pages
 
-1. Run the command below to install gh-pages (only required when you're deploying for the first time)
+1. Run the command below to install gh-pages (only required when you're deploying for the first time).
 
 		yarn add -D gh-pages
 
