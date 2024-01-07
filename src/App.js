@@ -5,7 +5,6 @@ import EmbedVideo  from './EmbedVideo';
 import Features from './Features';
 import { Container } from 'react-bootstrap';
 import Footer from "./Footer.js";
-import FaceARTrailer from "./videos/FaceARTrailer.mp4"
 
 function App() {
   return (
@@ -17,7 +16,7 @@ function App() {
           <IntroBanner />
         </div>
         <div className='p-4 mb-1'>
-          <EmbedVideo videoSrc={FaceARTrailer} />
+          <EmbedVideo youtubeEmbedCode={'dZJAAmF_aQg'} />
         </div>
         <div className='p-4 mb-1'>
           <Features />
