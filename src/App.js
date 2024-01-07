@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <FaceARNavbar/>
       <Container>
-      <div className='p-2 mb-1'></div> {/*Spacer*/}
+      <div className='p-4 mb-1'></div> {/*Spacer*/}
         <div>
           <IntroBanner />
         </div>
