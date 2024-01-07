@@ -10,9 +10,9 @@ The website for FaceAR: an AR mobile app to help patients with facial disabiliti
 		sudo apt install npm
 		npm install yarn
 
-2.  Run the command below to install all the needed dependencies.
+2.  Run the command below to install bootstrap.
 
-		yarn run bootstrap
+		yarn add bootstrap react-bootstrap
 
 3. Start a development server for testing
 
@@ -20,7 +20,8 @@ The website for FaceAR: an AR mobile app to help patients with facial disabiliti
 
 # Building and Deploying the FaceAR Website to GitHub Pages
 
-1. Make sure the homepage in the package.json file contains the correct URL: https://nithishakumar.github.io/facear/
+1. Run the command below to install gh-pages
+	yarn add -D gh-pages
 2. Run the following command on a local terminal to deploy the site.
    
 		npm run deploy
