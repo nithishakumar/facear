@@ -18,10 +18,14 @@ The website for FaceAR: an AR mobile app to help patients with facial disabiliti
 
 		yarn start
 
+There's no need to restart the development server after making changes. Just save the changes and go back to the site, the changes will be visibile.
+
 # Building and Deploying the FaceAR Website to GitHub Pages
 
 1. Run the command below to install gh-pages
-	yarn add -D gh-pages
+
+		yarn add -D gh-pages
+
 2. Run the following command on a local terminal to deploy the site.
    
 		npm run deploy
