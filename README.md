@@ -14,6 +14,10 @@ The website for FaceAR: an AR mobile app to help patients with facial disabiliti
 
 		yarn add bootstrap react-bootstrap
 
+3. Run the command below to install react-router
+
+		yarn add react-router-dom
+
 3. Start a development server for testing
 
 		yarn start

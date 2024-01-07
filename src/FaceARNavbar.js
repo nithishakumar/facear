@@ -5,19 +5,20 @@ import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './FaceARNavbar.css';
+import { Link } from 'react-router-dom';
 
 function FaceARNavbar() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#">
+        <Link to='/' className="navbar-brand">
             <img
               alt=""
               src={logo}
               width="28"
               height="28"
               className="d-inline-block align-top mx-2"
-            />FaceAR</Navbar.Brand>
+            />FaceAR</Link>
         <Navbar.Toggle aria-controls="offcanvasNavbar" />
         <Navbar.Offcanvas
           id="offcanvasNavbar"
@@ -29,7 +30,9 @@ function FaceARNavbar() {
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
               <Nav.Link href="#action1">About</Nav.Link>
-              <Nav.Link href="#action2">GTM Plan</Nav.Link>
+              <Link to="/gtm-plan" className="nav-link">
+                GTM Plan
+              </Link>
               <Nav.Link href="#action3">Contact</Nav.Link>
             </Nav>
           </Offcanvas.Body>
