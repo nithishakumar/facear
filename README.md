@@ -22,7 +22,7 @@ There's no need to restart the development server after making changes. Just sav
 
 # Building and Deploying the FaceAR Website to GitHub Pages
 
-1. Run the command below to install gh-pages
+1. Run the command below to install gh-pages (only required when you're deploying for the first time)
 
 		yarn add -D gh-pages
 
