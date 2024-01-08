@@ -1,5 +1,6 @@
 import './GTMPlan.css';
 import Card from 'react-bootstrap/Card';
+import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Sales from './img/Sales.jpg';
@@ -8,7 +9,7 @@ import Refinement from './img/Refinement.jpg';
 
 function GTMPlan() {
     return (
-      <div className="container">
+      <Container className="px-5">
       <Row className="justify-content-center">
         <Col className="text-center fs-1">
           <b><span className='gradient-text'>Go-To-Market</span> Plan</b>
@@ -59,7 +60,7 @@ function GTMPlan() {
           </Card>
         </Col>
       </Row>
-    </div>
+    </Container>
       );
 }
 
