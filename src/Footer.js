@@ -19,7 +19,7 @@ function Footer() {
               <Link to='/gtm-plan'>GTM Plan</Link>
             </div>
             <div>
-            <p class="mt-3">Contact: facearteam@umich.edu</p>
+            <p class="mt-3">Contact: <Link className='contact-color' to='mailto:facearteam@umich.edu'>facearteam@umich.edu</Link></p>
             </div>
             <div>
               <p class="mt-3">&copy; {new Date().getFullYear()} FaceAR. All rights reserved.</p>

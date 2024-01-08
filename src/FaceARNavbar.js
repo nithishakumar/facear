@@ -23,14 +23,14 @@ function FaceARNavbar() {
         <Navbar.Offcanvas
           id="offcanvasNavbar"
           aria-labelledby="offcanvasNavbarLabel"
-          placement="end"
-        >
+          placement="end">
           <Offcanvas.Header closeButton>
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
               <Nav.Link href="#action1">About</Nav.Link>
               <Link to="/gtm-plan" className="nav-link">GTM Plan</Link>
+              <Link to="mailto:facearteam@umich.edu" className="nav-link">Contact</Link>
             </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>
