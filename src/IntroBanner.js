@@ -8,7 +8,6 @@ import MichiganMedicine from './img/MichiganMedicine.png'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './IntroBanner.css';
 
-
 function IntroBanner() {
     return (
       <div>
@@ -27,7 +26,7 @@ function IntroBanner() {
           <Col md={6} className="mb-4">
             <div className="card container-bg">
               <div className="card-body">
-                <h5 className="text-center card-title card-title-color">Funded by</h5>
+                <div className="text-center card-title card-title-color fs-4">Funded by</div>
                 <Image src={Snap} width="468" height="658" fluid />
               </div>
             </div>
@@ -35,7 +34,7 @@ function IntroBanner() {
           <Col md={6} className="mb-4">
             <div className="card container-bg">
               <div className="card-body">
-                <h5 className="text-center card-title card-title-color">Clinical Support from</h5>
+                <div className="text-center card-title card-title-color fs-4">Clinical Support from</div>
                 <Image src={MichiganMedicine} width="468" height="658" fluid />
               </div>
             </div>

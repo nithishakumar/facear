@@ -5,23 +5,29 @@ import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
-    <footer class="footer">
+  <footer class="footer" id="mainFooter">
     <div class="container text-center">
       <div class="row">
         <div class="col-md-12">
-          <img src={logo} alt="Company Logo" class="footer-logo"/>
-          <span class="h4">FaceAR</span>
-          <div class="footer-links mt-3">
-            <Link to='/'>Home</Link>
-            <a href="#">About</a>
-            <Link to='/gtm-plan'>GTM Plan</Link>
-            <a href="#">Contact</a>
-          </div>
-          <p class="mt-3">&copy; {new Date().getFullYear()} FaceAR. All rights reserved.</p>
+          <div className="d-flex justify-content-center align-items-center">
+            <img src={logo} alt="Company Logo" class="footer-logo"/>
+            <span class="h4">FaceAR</span>
+            </div>
+            <div class="footer-links mt-3">
+              <Link to='/'>Home</Link>
+              <a href="#">About</a>
+              <Link to='/gtm-plan'>GTM Plan</Link>
+            </div>
+            <div>
+            <p class="mt-3">Contact: facearteam@umich.edu</p>
+            </div>
+            <div>
+              <p class="mt-3">&copy; {new Date().getFullYear()} FaceAR. All rights reserved.</p>
+            </div>
         </div>
       </div>
     </div>
-  </footer>
+  </footer>   
   );
 }
 

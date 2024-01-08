@@ -1,0 +1,14 @@
+.card-style {
+    border: 0;
+    background: #494956;
+    color: white;
+}
+
+.custom-image-size {
+    max-width: 75%; /* Adjust this value as needed */
+    height: auto; /* Maintains aspect ratio */
+}
+
+.card-title-color {
+    color: #ffe706
+}

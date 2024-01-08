@@ -9,12 +9,13 @@ function App() {
   return (
     <div className="App">
       <Router>
-      <FaceARNavbar />
+      <FaceARNavbar/>
+      <div className='p-4 mb-4'></div>
       <Routes>
         <Route path="/*" element={<Home />} />
         <Route path="/gtm-plan" element={<GTMPlan />} />
-        {/* Other routes */}
       </Routes>
+      <div className='p-4 mb-4'></div>
       <Footer/>
     </Router>
     </div>

@@ -31,7 +31,6 @@ function FaceARNavbar() {
             <Nav className="justify-content-end flex-grow-1 pe-3">
               <Nav.Link href="#action1">About</Nav.Link>
               <Link to="/gtm-plan" className="nav-link">GTM Plan</Link>
-              <Nav.Link href="#action3">Contact</Nav.Link>
             </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>

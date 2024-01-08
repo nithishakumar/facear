@@ -6,21 +6,8 @@
     color: #ffe706
 }
 
-.gradient-text {
-  background-image: linear-gradient(to right, purple,  red);
-  background-clip: text;
-  color: transparent;
-  background-size: 200% 100%; 
-  animation: changeGradient 2s linear infinite alternate;
-}
-
-@keyframes changeGradient {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 100% 0;
-  }
+.homepage-title {
+  color: #494956;
 }
 
 .card {

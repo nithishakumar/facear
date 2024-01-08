@@ -9,3 +9,7 @@
 .card-title-color {
     color: #ffe706
 }
+
+.card-body {
+    text-align: center;
+}
