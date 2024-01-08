@@ -5,14 +5,12 @@ import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
-  <footer class="footer" id="mainFooter">
-    <div class="container text-center">
+  <footer class="footer">
+    <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <div className="d-flex justify-content-center align-items-center">
             <img src={logo} alt="Company Logo" class="footer-logo"/>
             <span class="h4">FaceAR</span>
-            </div>
             <div class="footer-links mt-3">
               <Link to='/'>Home</Link>
               <a href="#">About</a>
