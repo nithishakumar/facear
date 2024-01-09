@@ -2,6 +2,7 @@ import logo from './img/logo.png'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './Footer.css';
 import { Link } from 'react-router-dom';
+import { Container, Row, Col } from 'react-bootstrap';
 
 function Footer() {
   return (
@@ -9,22 +10,19 @@ function Footer() {
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-            <img src={logo} alt="Company Logo" class="footer-logo"/>
-            <span class="h4">FaceAR</span>
-            <div class="footer-links mt-3">
-              <Link to='/'>Home</Link>
-              <Link to="/facear/about">About</Link>
-              <Link to='/facear/gtm-plan'>GTM Plan</Link>
-            </div>
-            <div className='footer-links mt-3'>
-            <p class="mt-3">Contact: <Link className='contact-color' to='mailto:facearteam@umich.edu'>facearteam@umich.edu</Link></p>
-            </div>
-            <div>
+            <Container>
+              <Row>
+                <Col><img src={logo} alt="Company Logo" class="footer-logo"/><h4>FaceAR</h4></Col>
+                <Col><Link to='/' className='contact-color'>Home</Link></Col>
+                <Col><Link to="/facear/about" className='contact-color'>About</Link></Col>
+                <Col><Link to='/facear/gtm-plan' className='contact-color'>GTM Plan</Link></Col>
+              </Row>
+              </Container>
+              <p class="mt-3">Contact: <Link className='contact-color' to='mailto:facearteam@umich.edu'>facearteam@umich.edu</Link></p>
               <p class="mt-3">&copy; {new Date().getFullYear()} FaceAR. All rights reserved.</p>
-            </div>
         </div>
       </div>
-    </div>
+      </div>
   </footer>   
   );
 }
