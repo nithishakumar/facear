@@ -6,10 +6,11 @@ import Col from 'react-bootstrap/Col';
 import Sales from './img/Sales.jpg';
 import Expansion from './img/Expansion.jpg';
 import Refinement from './img/Refinement.jpg';
+import { Link } from 'react-router-dom';
 
 function GTMPlan() {
     return (
-      <Container className="px-5">
+      <Container className="px-4">
       <Row className="justify-content-center">
         <Col className="text-center fs-1">
           <b><span className='gradient-text'>Go-To-Market</span> Plan</b>
@@ -52,7 +53,7 @@ function GTMPlan() {
               <Card.Title className='card-title-color fs-2'>Phase 3: Expansion</Card.Title>
               <div className="mt-3">
               <Card.Text className="fs-5">
-                Partner with medical software distributors like Epic and/or societies like Facial Therapy Specialists International.
+                Partner with medical software distributors like <Link to="https://www.epic.com/about/" className='card-link-color'>Epic</Link> and/or societies like <Link to="https://facialtherapyspecialists.com/our-team/" className='card-link-color'>Facial Therapy Specialists International</Link>.
               </Card.Text>
               <img src={Expansion} className="card-img-top my-auto img-fluid custom-image-size" alt="Expansion" />
               </div>

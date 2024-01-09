@@ -1,0 +1,20 @@
+.about-banner {
+   height: 500px;
+}
+
+.outer-card-bg {
+   background-color: #494956;
+}
+
+.inner-card-bg {
+   background-color: #fff486;
+}
+
+.inner-card-text-color {
+   color: #494956;
+   font-weight: bold;
+}
+
+.outer-card-text-color {
+   color: white;
+}

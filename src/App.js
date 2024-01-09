@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Home.js'
 import GTMPlan from './GTMPlan';
 import Footer from './Footer.js';
+import About from './About.js';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/*" element={<Home />} />
         <Route path="/gtm-plan" element={<GTMPlan />} />
+        <Route path="/about" element={<About />} />
       </Routes>
       <div className='p-4 mb-4'></div>
       <Footer/>

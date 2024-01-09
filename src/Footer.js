@@ -13,10 +13,10 @@ function Footer() {
             <span class="h4">FaceAR</span>
             <div class="footer-links mt-3">
               <Link to='/'>Home</Link>
-              <a href="#">About</a>
+              <a href="/about">About</a>
               <Link to='/gtm-plan'>GTM Plan</Link>
             </div>
-            <div>
+            <div className='footer-links mt-3'>
             <p class="mt-3">Contact: <Link className='contact-color' to='mailto:facearteam@umich.edu'>facearteam@umich.edu</Link></p>
             </div>
             <div>
