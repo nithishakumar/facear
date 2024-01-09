@@ -14,8 +14,8 @@ function App() {
       <div className='p-4 mb-4'></div>
       <Routes>
         <Route path="/*" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/gtm-plan" element={<GTMPlan />} />
+        <Route path="/facear/about" element={<About />} />
+        <Route path="/facear/gtm-plan" element={<GTMPlan />} />
       </Routes>
       <div className='p-4 mb-4'></div>
       <Footer/>
