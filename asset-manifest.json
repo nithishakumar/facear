@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/facear/static/css/main.f759b0e4.css",
-    "main.js": "/facear/static/js/main.aaab8f9a.js",
+    "main.js": "/facear/static/js/main.e1be073f.js",
     "static/js/787.55ecc84d.chunk.js": "/facear/static/js/787.55ecc84d.chunk.js",
     "static/media/expertGuidedRecovery.png": "/facear/static/media/expertGuidedRecovery.8d9c5b7e02e7a41e6099.png",
     "static/media/realTimeARFeedback.png": "/facear/static/media/realTimeARFeedback.b1dd013f5211cc73b6fb.png",
@@ -22,11 +22,11 @@
     "static/media/Snap.png": "/facear/static/media/Snap.6dd385bd52624cf3fd0d.png",
     "index.html": "/facear/index.html",
     "main.f759b0e4.css.map": "/facear/static/css/main.f759b0e4.css.map",
-    "main.aaab8f9a.js.map": "/facear/static/js/main.aaab8f9a.js.map",
+    "main.e1be073f.js.map": "/facear/static/js/main.e1be073f.js.map",
     "787.55ecc84d.chunk.js.map": "/facear/static/js/787.55ecc84d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f759b0e4.css",
-    "static/js/main.aaab8f9a.js"
+    "static/js/main.e1be073f.js"
   ]
 }
