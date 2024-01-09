@@ -13,7 +13,7 @@ function Footer() {
             <Container>
               <Row>
                 <Col><img src={logo} alt="Company Logo" class="footer-logo"/><h4>FaceAR</h4></Col>
-                <Col><Link to='/' className='contact-color'>Home</Link></Col>
+                <Col><Link to='/facear/' className='contact-color'>Home</Link></Col>
                 <Col><Link to="/facear/about" className='contact-color'>About</Link></Col>
                 <Col><Link to='/facear/gtm-plan' className='contact-color'>GTM Plan</Link></Col>
               </Row>
