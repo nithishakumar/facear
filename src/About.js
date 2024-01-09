@@ -10,8 +10,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import LinkedinLogo from './img/linkedinLogo.png';
 import Showcase from './img/showcase.png';
-
-
+import { Link } from 'react-router-dom';
 
 function Problems() {
     return (
@@ -28,6 +27,9 @@ function Problems() {
                   <img src={youtubeVideo} className="card-img-bottom mt-2" alt="Exercise YouTube Video" />
                 </div>
               </div>
+              <div className='card-footer w-100'>Source: <Link 
+              to="https://www.proquest.com/docview/2137840500?pq-origsite=gscholar&fromopenview=true" 
+              className='card-footer-text-color'>Journal of Alternative Medicine Research</Link></div>
             </div>
           </div>
           <div className="col-md-6 mt-md-0 mt-3">
@@ -41,12 +43,16 @@ function Problems() {
                   <img src={skilledProfessionals} className="card-img-bottom mt-2" alt="Skilled Medical Professionals" />
                 </div>
               </div>
+              <div className='card-footer w-100'>Source: <Link 
+              to="https://dataintelo.com/report/facial-paralysis-treatment-market/" 
+              className='card-footer-text-color'>Dataintelo Facial Paralysis Market Report</Link></div>
             </div>
           </div>
         </div>
       </div>
     );
   }
+
   function Team() {
     return (
       <Container fluid>
@@ -100,7 +106,6 @@ function Problems() {
     );
   }
   
-  
   function About() {
     return (
       <Container className='px-4'> 
@@ -149,8 +154,9 @@ function Problems() {
                     <div className='fs-4 outer-card-text-color'>
                     What started as a capstone project for a college course is now being futher 
                     developed with funding from Snap and professional clinical support from Michigan 
-                    Medicine, under the supervision of Dr. Chandramouli Krishnan. The FaceAR team is 
-                    iteratively improving the app by actively applying feedback on the app from facial 
+                    Medicine, under the supervision of <Link to="https://bme.umich.edu/people/chandramouli-krishnan/" 
+                    className='outer-card-text-color'>Dr. Chandramouli Krishnan</Link>. 
+                    The FaceAR team is iteratively improving the app by actively applying feedback on the app from facial 
                     disorder patients at Michigan Medicine.
                     </div>
                 </Card.Title>
