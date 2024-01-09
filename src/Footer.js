@@ -14,8 +14,8 @@ function Footer() {
               <Row>
                 <Col><img src={logo} alt="Company Logo" class="footer-logo"/><h4>FaceAR</h4></Col>
                 <Col><Link to='/facear/#' className='contact-color'>Home</Link></Col>
-                <Col><Link to="/facear/about#" className='contact-color'>About</Link></Col>
-                <Col><Link to='/facear/gtm-plan#' className='contact-color'>GTM Plan</Link></Col>
+                <Col><Link to="/facear/about/#" className='contact-color'>About</Link></Col>
+                <Col><Link to='/facear/gtm-plan/#' className='contact-color'>GTM Plan</Link></Col>
               </Row>
               </Container>
               <p class="mt-3">Contact: <Link className='contact-color' to='mailto:facearteam@umich.edu'>facearteam@umich.edu</Link></p>

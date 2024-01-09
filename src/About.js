@@ -118,39 +118,39 @@ function Problems() {
         <Row className="justify-content-center">
             <Col className="my-4"> {/* Equal space between title and cards */}
                 <Card className='outer-card-bg border-0'>
-                <Card.Title className='p-3'>
+                <Card.Body className='p-3'>
                     <div className='fs-4 outer-card-text-color'>
                     Several studies show that facial muscle exercises help patients with 
                     facial weakness & paralysis, but there are issues associated with performing 
                     these exercises:
                     </div>
-                </Card.Title>
+                </Card.Body>
                 <Card.Body className="d-flex justify-content-center align-items-center">
                     <Problems />
                 </Card.Body>
-                <Card.Title className='p-3'>
+                <Card.Body className='p-3'>
                     <div className='fs-4 outer-card-text-color'>
                 FaceAR is an accessible, cost-effective, and expert-backed solution that 
                 uses real-time AR feedback with engaging games to make the facial 
                 rehabilitation process more interactive.
                     </div>
-                </Card.Title>
+                </Card.Body>
                 </Card>
             </Col>
         </Row>
         <Row className="justify-content-center">
             <Col className="my-4"> {/* Equal space between title and cards */}
                 <Card className='outer-card-bg border-0'>
-                <Card.Title className='p-3'>
+                <Card.Body className='p-3'>
                     <div className='fs-4 outer-card-text-color'>
                     The FaceAR team consists of 4 University of Michigan alumni who are 
                     eager to use their XR development skills to create social impact:
                     </div>
-                </Card.Title>
+                </Card.Body>
                 <Card.Body className="d-flex justify-content-center align-items-center">
                     <Team />
                 </Card.Body>
-                <Card.Title className='p-3'>
+                <Card.Body className='p-3'>
                     <div className='fs-4 outer-card-text-color'>
                     What started as a capstone project for a college course is now being futher 
                     developed with funding from Snap and professional clinical support from Michigan 
@@ -159,7 +159,7 @@ function Problems() {
                     The FaceAR team is iteratively improving the app by actively applying feedback on the app from facial 
                     disorder patients at Michigan Medicine.
                     </div>
-                </Card.Title>
+                </Card.Body>
                 <img src={Showcase} className="card-img-bottom" alt="Showcase" />
                 </Card>
             </Col>
