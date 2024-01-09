@@ -28,7 +28,7 @@ function FaceARNavbar() {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
-              <Nav.Link href="/about">About</Nav.Link>
+              <Link to="/about" className="nav-link">About</Link>
               <Link to="/gtm-plan" className="nav-link">GTM Plan</Link>
               <Link to="mailto:facearteam@umich.edu" className="nav-link">Contact</Link>
             </Nav>

@@ -13,7 +13,7 @@ function Footer() {
             <span class="h4">FaceAR</span>
             <div class="footer-links mt-3">
               <Link to='/'>Home</Link>
-              <a href="/about">About</a>
+              <Link to="/about">About</Link>
               <Link to='/gtm-plan'>GTM Plan</Link>
             </div>
             <div className='footer-links mt-3'>
