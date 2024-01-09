@@ -11,7 +11,7 @@ function FaceARNavbar() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Link to='/' className="navbar-brand">
+        <Link to='/facear/' className="navbar-brand">
             <img
               alt=""
               src={logo}
