@@ -25,9 +25,9 @@ function GTMPlan() {
               <Card.Text className="fs-5">
                 Beta test at Michigan Medicine & nearby hospitals for ~3 months, alter app’s features accordingly, create pricing plan, & create marketing materials from user feedback.
               </Card.Text>
-              <img src={Refinement} className="card-img-top my-auto img-fluid custom-image-size" alt="Refinement" />
               </div>
             </Card.Body>
+            <img src={Refinement} className="card-img-top my-auto img-fluid" alt="Refinement" />
           </Card>
         </Col>
       </Row>
@@ -40,9 +40,9 @@ function GTMPlan() {
               <Card.Text className="fs-5">
                 Sell FaceAR to hospitals & other healthcare providers in the US - whose patients would be able to use the app for free.
               </Card.Text>
-              <img src={Sales} className="card-img-top my-auto img-fluid custom-image-size" alt="Sales" />
               </div>
             </Card.Body>
+            <img src={Sales} className="card-img-top my-auto img-fluid" alt="Sales" />
           </Card>
         </Col>
       </Row>
@@ -55,9 +55,9 @@ function GTMPlan() {
               <Card.Text className="fs-5">
                 Partner with medical software distributors like <Link to="https://www.epic.com/about/" className='card-link-color'>Epic</Link> and/or societies like <Link to="https://facialtherapyspecialists.com/our-team/" className='card-link-color'>Facial Therapy Specialists International</Link>.
               </Card.Text>
-              <img src={Expansion} className="card-img-top my-auto img-fluid custom-image-size" alt="Expansion" />
               </div>
             </Card.Body>
+            <img src={Expansion} className="card-img-top my-auto img-fluid" alt="Expansion" />
           </Card>
         </Col>
       </Row>

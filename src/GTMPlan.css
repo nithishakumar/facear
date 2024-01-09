@@ -4,11 +4,6 @@
     color: white;
 }
 
-.custom-image-size {
-    max-width: 800px;
-    height: auto; /* Maintains aspect ratio */
-}
-
 .card-title-color {
     color: #ffe706
 }

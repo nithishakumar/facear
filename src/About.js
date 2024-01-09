@@ -8,6 +8,8 @@ import youtubeVideo from './img/youtubeVideo.png';
 import skilledProfessionals from './img/skilledProfessionals.png';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import LinkedinLogo from './img/linkedinLogo.png';
+import Showcase from './img/showcase.png';
 
 
 
@@ -52,32 +54,44 @@ function Problems() {
           <Col>
             <Card className='border-0 inner-card-bg'>
               <Card.Body className='d-flex flex-column justify-content-between'>
-                <Card.Title>Nithisha Nantha Kumar</Card.Title>
-                <img src={Nithisha} className="card-img-bottom" alt="Skilled Medical Professionals" />
+                <Card.Title  className='inner-card-text-color'>Nithisha Kumar</Card.Title>
+                <img src={Nithisha} className="card-img-bottom mt-3" alt="Nithisha Nantha Kumar" />
+                <Button href='https://www.linkedin.com/in/nithishakumar/' className='mt-3 border-0 outer-card-bg'>
+                    <img src={LinkedinLogo} width='20' height='auto' alt="Image" class="img-fluid"/>
+                </Button>{' '}
               </Card.Body>
             </Card>
           </Col>
           <Col>
             <Card className='border-0 inner-card-bg'>
               <Card.Body className='d-flex flex-column justify-content-between'>
-                <Card.Title>Melissa Fang</Card.Title>
-                <img src={Melissa} className="card-img-bottom" alt="Skilled Medical Professionals" />
+                <Card.Title className='inner-card-text-color'>Melissa Fang</Card.Title>
+                <img src={Melissa} className="card-img-bottom mt-3" alt="Melissa Fang" />
+                <Button  href='https://www.linkedin.com/in/melissa-fang-04a76a20a/' className='mt-3 border-0 outer-card-bg'>
+                    <img src={LinkedinLogo} width='20' height='auto' alt="Image" class="img-fluid"/>
+                </Button>{' '}
               </Card.Body>
             </Card>
           </Col>
           <Col>
             <Card className='border-0 inner-card-bg'>
               <Card.Body className='d-flex flex-column justify-content-between'>
-                <Card.Title>Anisha Nahta</Card.Title>
-                <img src={Anisha} className="card-img-bottom" alt="Skilled Medical Professionals" />
+                <Card.Title className='inner-card-text-color'>Anisha Nahta</Card.Title>
+                <img src={Anisha} className="card-img-bottom mt-3" alt="Anisha Nahta" />
+                <Button href='https://www.linkedin.com/in/anishanahta/' className='mt-3 border-0 outer-card-bg'>
+                    <img src={LinkedinLogo} width='20' height='auto' alt="Image" class="img-fluid"/>
+                </Button>{' '}
               </Card.Body>
             </Card>
           </Col>
           <Col>
             <Card className='border-0 inner-card-bg'>
               <Card.Body className='d-flex flex-column justify-content-between'>
-                <Card.Title>Haihan Gao</Card.Title>
-                <img src={Haihan} className="card-img-bottom" alt="Skilled Medical Professionals" />
+                <Card.Title className='inner-card-text-color'>Haihan Gao</Card.Title>
+                <img src={Haihan} className="card-img-bottom mt-3" alt="Haihan Gao" />
+                <Button href='https://www.linkedin.com/in/haihan--gao/' className='mt-3 border-0 outer-card-bg'>
+                    <img src={LinkedinLogo} width='20' height='auto' alt="Image" class="img-fluid"/>
+                </Button>{' '}
               </Card.Body>
             </Card>
           </Col>
@@ -140,6 +154,7 @@ function Problems() {
                     disorder patients at Michigan Medicine.
                     </div>
                 </Card.Title>
+                <img src={Showcase} className="card-img-bottom" alt="Showcase" />
                 </Card>
             </Col>
         </Row>
