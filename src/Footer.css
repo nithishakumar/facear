@@ -6,6 +6,12 @@
   text-align: center;
 }
 
+.footer-logo {
+  width: 50px;
+  height: auto;
+}
+
+
 .contact-color {
   color: white
 }
