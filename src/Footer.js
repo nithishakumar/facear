@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './Footer.css';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
+import messageIcon from './img/messageIcon.png';
 
 function Footer() {
   /*Scrolls to the top of the page*/
@@ -26,7 +27,7 @@ function Footer() {
                 <Col><Link to='/gtm-plan' className='contact-color'  onClick={scrollToTop}>GTM Plan</Link></Col>
               </Row>
               </Container>
-              <p class="mt-3">Contact: <Link className='contact-color' to='mailto:facearteam@umich.edu'>facearteam@umich.edu</Link></p>
+              <p class="mt-3"><img src={messageIcon} alt="Message Icon" className='mail-icon' width='30' height='auto' fluid /><Link className='contact-color' to='mailto:facearteam@umich.edu'>facearteam@umich.edu</Link></p>
               <p class="mt-3">&copy; {new Date().getFullYear()} FaceAR. All rights reserved.</p>
         </div>
       </div>
