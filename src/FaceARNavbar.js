@@ -11,7 +11,7 @@ function FaceARNavbar() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Link to='/facear/' className="navbar-brand">
+        <Link to='/' className="navbar-brand">
             <img
               alt=""
               src={logo}
@@ -28,8 +28,8 @@ function FaceARNavbar() {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
-              <Link to="/facear/about" className="nav-link">About</Link>
-              <Link to="/facear/gtm-plan" className="nav-link">GTM Plan</Link>
+              <Link to="/about" className="nav-link">About</Link>
+              <Link to="/gtm-plan" className="nav-link">GTM Plan</Link>
               <Link to="mailto:facearteam@umich.edu" className="nav-link">Contact</Link>
             </Nav>
           </Offcanvas.Body>
