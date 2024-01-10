@@ -6,10 +6,12 @@ import { Container, Row, Col } from 'react-bootstrap';
 import messageIcon from './img/messageIcon.png';
 
 function Footer() {
-  /*Scrolls to the top of the page*/
-  const scrollToTop = () => {
-    window.scrollTo(0, 0);
-  };
+    /* Scrolls to the top of the page after a delay */
+    const scrollToTop = () => {
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+      }, 100); // Delay of 100 milliseconds (0.1 seconds) before scrolling to the top
+    };
 
   return (
   <footer class="footer">
