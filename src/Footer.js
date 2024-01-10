@@ -8,10 +8,7 @@ import messageIcon from './img/messageIcon.png';
 function Footer() {
   /*Scrolls to the top of the page*/
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth' // Smooth scroll behavior
-    });
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -25,13 +22,13 @@ function Footer() {
                   <img src={logo} alt="Company Logo" className="footer-logo" />
                   <h4>FaceAR</h4>
                 </Col>
-                <Col xs={12} sm={3} className="text-center">
+                <Col xs={12} sm={3} className="text-center pt-2">
                   <Link to="/" className="contact-color" onClick={scrollToTop}>Home</Link>
                 </Col>
-                <Col xs={12} sm={3} className="text-center">
+                <Col xs={12} sm={3} className="text-center pt-2">
                   <Link to="/about" className="contact-color" onClick={scrollToTop}>About</Link>
                 </Col>
-                <Col xs={12} sm={3} className="text-center">
+                <Col xs={12} sm={3} className="text-center pt-2">
                   <Link to="/gtm-plan" className="contact-color" onClick={scrollToTop}>GTM Plan</Link>
                 </Col>
               </Row>
