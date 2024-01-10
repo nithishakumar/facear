@@ -20,15 +20,24 @@ function Footer() {
       <div class="row">
         <div class="col-md-12">
             <Container>
-              <Row>
-                <Col><img src={logo} alt="Company Logo" class="footer-logo"/><h4>FaceAR</h4></Col>
-                <Col><Link to='/' className='contact-color'  onClick={scrollToTop}>Home</Link></Col>
-                <Col><Link to="/about" className='contact-color' onClick={scrollToTop}>About</Link></Col>
-                <Col><Link to='/gtm-plan' className='contact-color'  onClick={scrollToTop}>GTM Plan</Link></Col>
+              <Row className="justify-content-center align-items-top">
+                <Col xs={12} sm={3} className="text-center">
+                  <img src={logo} alt="Company Logo" className="footer-logo" />
+                  <h4>FaceAR</h4>
+                </Col>
+                <Col xs={12} sm={3} className="text-center">
+                  <Link to="/" className="contact-color" onClick={scrollToTop}>Home</Link>
+                </Col>
+                <Col xs={12} sm={3} className="text-center">
+                  <Link to="/about" className="contact-color" onClick={scrollToTop}>About</Link>
+                </Col>
+                <Col xs={12} sm={3} className="text-center">
+                  <Link to="/gtm-plan" className="contact-color" onClick={scrollToTop}>GTM Plan</Link>
+                </Col>
               </Row>
-              </Container>
-              <p class="mt-3"><img src={messageIcon} alt="Message Icon" className='mail-icon' width='30' height='auto' fluid /><Link className='contact-color' to='mailto:facearteam@umich.edu'>facearteam@umich.edu</Link></p>
-              <p class="mt-3">&copy; {new Date().getFullYear()} FaceAR. All rights reserved.</p>
+            </Container>
+            <p class="mt-3"><img src={messageIcon} alt="Message Icon" className='mail-icon' width='30' height='auto' fluid /><Link className='contact-color' to='mailto:facearteam@umich.edu'>facearteam@umich.edu</Link></p>
+            <p class="mt-3">&copy; {new Date().getFullYear()} FaceAR. All rights reserved.</p>
         </div>
       </div>
       </div>
