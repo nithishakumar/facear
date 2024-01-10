@@ -1,6 +1,6 @@
 import './App.css';
 import FaceARNavbar from './FaceARNavbar';
-import { HashRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Home.js'
 import GTMPlan from './GTMPlan';
 import Footer from './Footer.js';
@@ -9,7 +9,7 @@ import About from './About.js';
 function App() {
   return (
     <div className="App">
-      <HashRouter>
+      <Router>
       <FaceARNavbar/>
       <div className='p-4 mb-4'></div>
       <Routes>
@@ -19,7 +19,7 @@ function App() {
       </Routes>
       <div className='p-4 mb-4'></div>
       <Footer/>
-    </HashRouter>
+    </Router>
     </div>
   );
 }
