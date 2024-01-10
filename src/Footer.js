@@ -10,7 +10,9 @@ function Footer() {
     const scrollToTop = () => {
       setTimeout(() => {
         window.scrollTo(0, 0);
-      }, 100); // Delay of 100 milliseconds (0.1 seconds) before scrolling to the top
+      }, 100); 
+      /* Delay of 100 milliseconds (0.1 seconds) before scrolling to the top 
+         (delay is required for mobile devices) */
     };
 
   return (
