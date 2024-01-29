@@ -5,6 +5,7 @@ import Image from 'react-bootstrap/Image';
 import useCase1 from './img/useCase1.png';
 import Snap from './img/Snap.png'
 import MichiganMedicine from './img/MichiganMedicine.png'
+import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './IntroBanner.css';
 
@@ -27,7 +28,7 @@ function IntroBanner() {
             <div className="card container-bg">
               <div className="card-body">
                 <div className="text-center card-title card-title-color fs-4">Funded by</div>
-                <Image src={Snap} width="468" height="658" fluid />
+                <Link to="https://ar.snap.com/" target="_blank" rel="noopener noreferrer"><Image src={Snap} width="468" height="658" fluid /></Link>
               </div>
             </div>
           </Col>
@@ -35,7 +36,7 @@ function IntroBanner() {
             <div className="card container-bg">
               <div className="card-body">
                 <div className="text-center card-title card-title-color fs-4">Clinical Support from</div>
-                <Image src={MichiganMedicine} width="468" height="658" fluid />
+                <Link to="https://www.michiganmedicine.org/" target="_blank" rel="noopener noreferrer"><Image src={MichiganMedicine} width="468" height="658" fluid /></Link>
               </div>
             </div>
           </Col>

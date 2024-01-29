@@ -29,7 +29,8 @@ function Problems() {
               </div>
               <div className='card-footer w-100'>Source: <Link 
               to="https://www.proquest.com/docview/2137840500?pq-origsite=gscholar&fromopenview=true" 
-              className='card-footer-text-color'>Journal of Alternative Medicine Research</Link></div>
+              className='card-footer-text-color' target="_blank" rel="noopener noreferrer">
+                Journal of Alternative Medicine Research</Link></div>
             </div>
           </div>
           <div className="col-md-6 mt-md-0 mt-3">
@@ -45,7 +46,7 @@ function Problems() {
               </div>
               <div className='card-footer w-100'>Source: <Link 
               to="https://dataintelo.com/report/facial-paralysis-treatment-market/" 
-              className='card-footer-text-color'>Dataintelo Facial Paralysis Market Report</Link></div>
+              className='card-footer-text-color' target="_blank" rel="noopener noreferrer">Dataintelo Facial Paralysis Market Report</Link></div>
             </div>
           </div>
         </div>
@@ -62,7 +63,8 @@ function Problems() {
               <Card.Body className='d-flex flex-column justify-content-between'>
                 <Card.Title  className='inner-card-text-color'>Nithisha Kumar</Card.Title>
                 <img src={Nithisha} className="card-img-bottom mt-3" alt="Nithisha Nantha Kumar" />
-                <Button href='https://www.linkedin.com/in/nithishakumar/' className='mt-3 border-0 outer-card-bg'>
+                <Button href='https://www.linkedin.com/in/nithishakumar/' className='mt-3 border-0 outer-card-bg' 
+                target="_blank" rel="noopener noreferrer">
                     <img src={LinkedinLogo} width='20' height='auto' alt="Image" class="img-fluid"/>
                 </Button>{' '}
               </Card.Body>
@@ -73,7 +75,8 @@ function Problems() {
               <Card.Body className='d-flex flex-column justify-content-between'>
                 <Card.Title className='inner-card-text-color'>Melissa Fang</Card.Title>
                 <img src={Melissa} className="card-img-bottom mt-3" alt="Melissa Fang" />
-                <Button  href='https://www.linkedin.com/in/melissa-fang-04a76a20a/' className='mt-3 border-0 outer-card-bg'>
+                <Button  href='https://www.linkedin.com/in/melissa-fang-04a76a20a/' className='mt-3 border-0 outer-card-bg' 
+                target="_blank" rel="noopener noreferrer">
                     <img src={LinkedinLogo} width='20' height='auto' alt="Image" class="img-fluid"/>
                 </Button>{' '}
               </Card.Body>
@@ -84,7 +87,8 @@ function Problems() {
               <Card.Body className='d-flex flex-column justify-content-between'>
                 <Card.Title className='inner-card-text-color'>Anisha Nahta</Card.Title>
                 <img src={Anisha} className="card-img-bottom mt-3" alt="Anisha Nahta" />
-                <Button href='https://www.linkedin.com/in/anishanahta/' className='mt-3 border-0 outer-card-bg'>
+                <Button href='https://www.linkedin.com/in/anishanahta/' className='mt-3 border-0 outer-card-bg' 
+                target="_blank" rel="noopener noreferrer">
                     <img src={LinkedinLogo} width='20' height='auto' alt="Image" class="img-fluid"/>
                 </Button>{' '}
               </Card.Body>
@@ -95,7 +99,8 @@ function Problems() {
               <Card.Body className='d-flex flex-column justify-content-between'>
                 <Card.Title className='inner-card-text-color'>Haihan Gao</Card.Title>
                 <img src={Haihan} className="card-img-bottom mt-3" alt="Haihan Gao" />
-                <Button href='https://www.linkedin.com/in/haihan--gao/' className='mt-3 border-0 outer-card-bg'>
+                <Button href='https://www.linkedin.com/in/haihan--gao/' className='mt-3 border-0 outer-card-bg' 
+                target="_blank" rel="noopener noreferrer">
                     <img src={LinkedinLogo} width='20' height='auto' alt="Image" class="img-fluid"/>
                 </Button>{' '}
               </Card.Body>
@@ -155,7 +160,7 @@ function Problems() {
                     What started as a capstone project for a college course is now being futher 
                     developed with funding from Snap and professional clinical support from Michigan 
                     Medicine, under the supervision of <Link to="https://bme.umich.edu/people/chandramouli-krishnan/" 
-                    className='outer-card-text-color'>Dr. Chandramouli Krishnan</Link>. 
+                    className='outer-card-text-color' target="_blank" rel="noopener noreferrer">Dr. Chandramouli Krishnan</Link>. 
                     The FaceAR team is iteratively improving the app by actively applying feedback on the app from facial 
                     disorder patients at Michigan Medicine.
                     </div>
