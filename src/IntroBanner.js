@@ -35,7 +35,7 @@ function IntroBanner() {
           <Col md={6} className="mb-4">
             <div className="card container-bg">
               <div className="card-body">
-                <div className="text-center card-title card-title-color fs-4">Project Team Support by</div>
+                <div className="text-center card-title card-title-color fs-4">Project Support by</div>
                 <Link to="https://www.michiganmedicine.org/" target="_blank" rel="noopener noreferrer"><Image src={MichiganMedicine} width="468" height="658" fluid /></Link>
               </div>
             </div>
