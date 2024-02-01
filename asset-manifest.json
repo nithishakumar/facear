@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/facear/static/css/main.8932c3bc.css",
+    "main.css": "/facear/static/css/main.983ed998.css",
     "main.js": "/facear/static/js/main.8c46ced6.js",
     "static/js/787.55ecc84d.chunk.js": "/facear/static/js/787.55ecc84d.chunk.js",
     "static/media/expertGuidedRecovery.png": "/facear/static/media/expertGuidedRecovery.8d9c5b7e02e7a41e6099.png",
@@ -21,13 +21,15 @@
     "static/media/logo.png": "/facear/static/media/logo.9043a7805812449ae4fb.png",
     "static/media/Snap.png": "/facear/static/media/Snap.6dd385bd52624cf3fd0d.png",
     "static/media/messageIcon.png": "/facear/static/media/messageIcon.a094011abc91c3a1270a.png",
+    "static/media/closebutton.webp": "/facear/static/media/closebutton.5c6b8820399124a8bfed.webp",
     "index.html": "/facear/index.html",
-    "main.8932c3bc.css.map": "/facear/static/css/main.8932c3bc.css.map",
+    "static/media/hamburger.webp": "/facear/static/media/hamburger.66e3497106e06ebd8abf.webp",
+    "main.983ed998.css.map": "/facear/static/css/main.983ed998.css.map",
     "main.8c46ced6.js.map": "/facear/static/js/main.8c46ced6.js.map",
     "787.55ecc84d.chunk.js.map": "/facear/static/js/787.55ecc84d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8932c3bc.css",
+    "static/css/main.983ed998.css",
     "static/js/main.8c46ced6.js"
   ]
 }
