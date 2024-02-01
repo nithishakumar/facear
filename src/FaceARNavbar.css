@@ -11,7 +11,7 @@
 
 .navbar-toggler-icon {
     /*Change color of mobile hamburger menu icon*/
-    background-image: url(./img/hamburger_icon.png);
+    background-image: url(./img/hamburger.webp);
 }
 
 .navbar-toggler {
@@ -28,5 +28,5 @@
 }
 
 .offcanvas-header .btn-close {
-    --bs-btn-close-bg: url(./img/closebutton_icon.png) !important;
+    --bs-btn-close-bg: url(./img/closebutton.webp) !important;
 }
