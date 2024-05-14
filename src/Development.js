@@ -23,10 +23,7 @@ async function renderAR() {
   const stream = await navigator.mediaDevices.getUserMedia({ video: true });
   const source = createMediaStreamSource(stream, { transform: Transform2D.MirrorX, cameraType: 'front' });
   await session.setSource(source);
-  // Set aspect ratio of the camera session to 16:9
-  var width = 960;
-  var height = 540;
-  await source.setRenderSize(width, height);
+  await source.setRenderSize(window.innerWidth / 1.5, window.innerHeight / 1.5);
  
   // Loading a single lens and apply it to the session
   var lensID = "ed7e4ee8-bc4f-4860-8cbc-ea290651e867";
