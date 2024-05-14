@@ -7,6 +7,7 @@ import { bootstrapCameraKit, createMediaStreamSource, Transform2D } from "@snap/
 
 
 async function renderAR() {
+  
   // Bootstrap the CameraKit Web SDK: Download WebAssembly runtime and configure SDK
   const apiToken = "eyJhbGciOiJIUzI1NiIsImtpZCI6IkNhbnZhc1MyU0hNQUNQcm9kIiwidHlwIjoiSldUIn0.eyJhdWQiOiJjYW52YXMtY2FudmFzYXBpIiwiaXNzIjoiY2FudmFzLXMyc3Rva2VuIiwibmJmIjoxNzE1NjQwNjk0LCJzdWIiOiI5YmFmZmI5Ni01ZDNlLTQ2MzUtYmIwNC00ZGFhYzNiZmQ0YTh-U1RBR0lOR345ZjJkN2Q5Ni00OTdkLTQ1YjYtODcxYy1mZDg4MzcxYjRmNTYifQ.k-Rl8uGTuACnIfjZrjMi4OSC26OStxBF6wjipB_hDYI";
   const cameraKit = await bootstrapCameraKit({ apiToken });
@@ -22,16 +23,17 @@ async function renderAR() {
   const stream = await navigator.mediaDevices.getUserMedia({ video: true });
   const source = createMediaStreamSource(stream, { transform: Transform2D.MirrorX, cameraType: 'front' });
   await session.setSource(source);
+  // Set aspect ratio of the camera session to 16:9
   var width = 960;
   var height = 540;
   await source.setRenderSize(width, height);
-  
-  /*
+ 
   // Loading a single lens and apply it to the session
-  const lens = await cameraKit.lensRepository.loadLens("<Lens ID>", "<Lens Group ID>");
+  var lensID = "43276930875";
+  var lensGroupID = "ab216e79-43dd-4506-b532-82ff2c4f268b";
+  const lens = await cameraKit.lensRepository.loadLens(lensID, lensGroupID);
   await session.applyLens(lens);
-  */
-
+  
   await session.play();
 }
 
