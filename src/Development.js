@@ -29,11 +29,11 @@ async function renderAR() {
   await source.setRenderSize(width, height);
  
   // Loading a single lens and apply it to the session
-  var lensID = "43276930875";
-  var lensGroupID = "ab216e79-43dd-4506-b532-82ff2c4f268b";
+  var lensID = "ed7e4ee8-bc4f-4860-8cbc-ea290651e867";
+  var lensGroupID = "1002ed8b-a97a-42f0-842f-21b57f4a8a42";
   const lens = await cameraKit.lensRepository.loadLens(lensID, lensGroupID);
   await session.applyLens(lens);
-  
+
   await session.play();
 }
 
