@@ -43,7 +43,7 @@ function Demo() {
       <Container className="px-4">
       <Row className="justify-content-center">
         <Col className="text-center fs-1">
-          <b><span className='gradient-text'>Development</span></b>
+          <b><span className='gradient-text'>Demo</span></b>
         </Col>
       </Row>
       <Row className="justify-content-center">
