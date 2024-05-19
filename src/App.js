@@ -2,7 +2,7 @@ import './App.css';
 import FaceARNavbar from './FaceARNavbar';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Home.js'
-import Development from './Development.js';
+import Development from './Demo.js';
 import Footer from './Footer.js';
 import About from './About.js';
 
@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/development" element={<Development />} />
+        <Route path="/demo" element={<Development />} />
       </Routes>
       <div className='p-4 mb-4'></div>
       <Footer/>
