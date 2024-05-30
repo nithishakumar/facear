@@ -27,9 +27,9 @@ async function renderAR() {
   // Loading a single lens and apply it to the session
   var lensID = "ed7e4ee8-bc4f-4860-8cbc-ea290651e867";
   var lensGroupID = "1002ed8b-a97a-42f0-842f-21b57f4a8a42";
-
+  // This is the test lens we made to test our API
   var tempLensId = "0e0463a1-11bc-403b-96ea-27f9dac90730";
-  const lens = await cameraKit.lensRepository.loadLens(lensID, lensGroupID);
+  const lens = await cameraKit.lensRepository.loadLens(tempLensId, lensGroupID);
   await session.applyLens(
     lens,
     { launchParams: { text: "Some Text that we will use with a Lens" } }
