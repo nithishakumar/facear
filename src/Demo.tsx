@@ -16,11 +16,15 @@ async function renderAR() {
 
   // Create a CameraKitSession to render lenses
   const session = await cameraKit.createSession();
+  if(!canvasContainer) {
+    console.log("canvasContainer was null");
+    return;
+  }
   canvasContainer.appendChild(session.output.live);
 
   // Give CameraKit SDK access to the user's webcam
   const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-  const source = createMediaStreamSource(stream, { transform: Transform2D.MirrorX, cameraType: 'front' });
+  const source = createMediaStreamSource(stream, { transform: Transform2D.MirrorX, cameraType: 'user' });
   await session.setSource(source);
   await source.setRenderSize(window.innerWidth / 1.5, window.innerHeight / 1.5);
  
