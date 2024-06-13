@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/facear/static/css/main.983ed998.css",
-    "main.js": "/facear/static/js/main.cd6273fc.js",
+    "main.js": "/facear/static/js/main.bca61460.js",
     "static/js/787.55ecc84d.chunk.js": "/facear/static/js/787.55ecc84d.chunk.js",
     "static/media/expertGuidedRecovery.png": "/facear/static/media/expertGuidedRecovery.8d9c5b7e02e7a41e6099.png",
     "static/media/realTimeARFeedback.png": "/facear/static/media/realTimeARFeedback.b1dd013f5211cc73b6fb.png",
@@ -22,11 +22,11 @@
     "index.html": "/facear/index.html",
     "static/media/hamburger.webp": "/facear/static/media/hamburger.66e3497106e06ebd8abf.webp",
     "main.983ed998.css.map": "/facear/static/css/main.983ed998.css.map",
-    "main.cd6273fc.js.map": "/facear/static/js/main.cd6273fc.js.map",
+    "main.bca61460.js.map": "/facear/static/js/main.bca61460.js.map",
     "787.55ecc84d.chunk.js.map": "/facear/static/js/787.55ecc84d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.983ed998.css",
-    "static/js/main.cd6273fc.js"
+    "static/js/main.bca61460.js"
   ]
 }
