@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Form</title>
+        <link rel="stylesheet" href="https://codepen.io/gymratpacks/pen/VKzBEp#0">
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="./assets/css/signupForm.css">
+    </head>
+    <body>
+      <img src="./assets/img/FaceARIcon.png" alt="FaceAR-icon" class="faceAR-icon">
+      <div class="row">
+      <div class="col-md-12">
+      <form>
+        <h1> Sign Up </h1>
+        <fieldset>  
+        
+          <legend><span class="number">2</span> Your Profile</legend>
+          
+         <label for="gender">Gender:</label>
+         <select id="gender" name="gender" required>
+            <option value="" disabled selected>Select your gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="nonbinary">Non-binary</option>
+            <option value="prefer_not_to_say">Prefer not to say</option>
+        </select>
+        <label for="name">Have you had strokes before? If yes, which side?</label>
+        <input type="text" id="medical_question1" name="user_medical_question1">
+        <label for="name">Have you been diagnosed with any neurological conditions, such as Bell's palsy or multiple sclerosis?</label>
+        <input type="text" id="medical_question2" name="user_medical_question2">
+        <label for="name">Have you undergone any treatments or therapies for facial paralysis before? If yes, what kind?</label>
+        <input type="text" id="medical_question3" name="user_medical_question3">
+         </fieldset>
+         <button onclick="window.location.href='./homeScreen.html'" type="button">Continue</button>
+       </form>
+        </div>
+      </div>
+      
+    </body>
+</html>

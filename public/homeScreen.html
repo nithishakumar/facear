@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Exercise Selection</title>
+    <link rel="stylesheet" type = "text/css" href="./assets/css/exerciseGrid.css">
+</head>
+<body>
+  <main>
+    <img src="./assets/img/FaceARIcon.png" alt="FaceAR-icon" class="faceAR-icon">
+    <div class="exercise-section">
+      <h2 class="section-header">Recommended</h2>
+      <div class="exercise-grid">
+        <div class="exercise-item" data-description="A list of commonly used facial exercises">
+            <button onclick="window.location.href='./exercise.html'">
+              <img src="./assets/img/GeneralExercise.png" alt="Exercise 1">
+            </button>
+            <p class="exercise-name">General</p>
+        </div>
+        <div class="exercise-item" data-description="Description for Exercise 2">
+          <button onclick="window.location.href='./exercise.html'">
+            <img src="./assets/img/BalanceGame.png" alt="Balance Game">
+          </button>
+          <p class="exercise-name">Balance Game</p>
+        </div>
+        <!-- Add more exercise items as needed -->
+      </div>
+    </div>
+    <div class="exercise-section">
+      <h2 class="section-header">Exercises</h2>
+      <div class="exercise-grid">
+        <div class="exercise-item" data-description="Description for General Exercise">
+            <Link to="/demo" className="nav-link">
+              <img src="./assets/img/GeneralExercise.png" alt="General Exercise">
+            </Link>
+            <p class="exercise-name">General Exercise</p>
+        </div>
+        <!-- Add more exercise items as needed -->
+      </div>
+    </div>
+    <div class="exercise-section">
+      <h2 class="section-header">Games</h2>
+      <div class="exercise-grid">
+        <div class="exercise-item" data-description="Description for BalanceGame">
+            <button onclick="window.location.href='./exercise.html'">
+              <img src="./assets/img/BalanceGame.png" alt="BalanceGame">
+            </button>
+            <p class="exercise-name">Balance Game</p>
+        </div>
+        <!-- Add more exercise items as needed -->
+      </div>
+    </div>
+  </main>
+    
+<div id="exercise-description"></div>
+
+</body>
+
+<script src="./assets/js/exerciseGrid.js"> </script>
+
+</html>
