@@ -29,6 +29,7 @@ async function renderAR() {
             if(!button) return;
             button.addEventListener('click', () => {
               resolve();
+              // prevents the promise from being resolved multiple times if the button is clicked more than once
             }, { once: true });
           });
         };
