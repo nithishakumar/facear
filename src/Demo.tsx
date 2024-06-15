@@ -10,24 +10,41 @@ import {
   RemoteApiServices,
   remoteApiServicesFactory,
 } from '@snap/camera-kit';
-
+import Button from 'react-bootstrap/Button';
 
 async function renderAR() {
 
   const remoteApiService: RemoteApiService = {
     apiSpecId: 'b032a38e-4fb9-4719-a0b5-b31d1ce63900',
-    getRequestHandler(request) {
+    getRequestHandler(request, lens) {
       if (request.endpointId !== 'facearendpoint1') return;
+  
       console.log(request);
+  
+      // Return a function that matches the RemoteApiRequestHandler type
       return (reply) => {
-        reply({
-          status: 'success',
-          metadata: {},
-          body: new TextEncoder().encode(JSON.stringify('response from app!')),
+        const waitForButtonClick = () => {
+          return new Promise<void>((resolve) => {
+            const button = document.getElementById('myButton');
+            if(!button) return;
+            button.addEventListener('click', () => {
+              resolve();
+            }, { once: true });
+          });
+        };
+  
+        // Handle the asynchronous behavior without marking the function as async
+        waitForButtonClick().then(() => {
+          reply({
+            status: 'success',
+            metadata: {},
+            body: new TextEncoder().encode(JSON.stringify('response from app!')),
+          });
         });
       };
     },
   };
+  
 
   // Bootstrap the CameraKit Web SDK: Download WebAssembly runtime and configure SDK
   const cameraKit = await bootstrapCameraKit(
@@ -85,6 +102,13 @@ function Demo() {
           <br></br>
           <div id="canvas-container"></div>
         </Col>
+      </Row>
+      <Row className="justify-content-center">
+        <Col className="text-center">
+          <Button id="myButton" variant="secondary" size="lg">
+            Test Button
+          </Button>
+      </Col>
       </Row>
     </Container>
       );
