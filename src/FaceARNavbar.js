@@ -8,9 +8,6 @@ import './FaceARNavbar.css';
 import { Link } from 'react-router-dom';
 
 function FaceARNavbar() {
-  const handleAppDemoClick = () => {
-    window.location.href = process.env.PUBLIC_URL + '/login.html';
-  };
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
@@ -33,7 +30,6 @@ function FaceARNavbar() {
             <Nav className="justify-content-end flex-grow-1 pe-3">
               <Link to="/about" className="nav-link">About</Link>
               <Link to="/demo" className="nav-link">Demo</Link>
-              <button onClick={handleAppDemoClick} className="nav-link btn-link">AppDemo</button>
               <Link to="mailto:facearteam@umich.edu" className="nav-link">Contact</Link>
             </Nav>
           </Offcanvas.Body>
