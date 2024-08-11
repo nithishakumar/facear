@@ -2,7 +2,7 @@ import './Demo.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { bootstrapCameraKit, createMediaStreamSource, Transform2D } from "@snap/camera-kit";
 import {
   Injectable,
@@ -10,42 +10,44 @@ import {
   RemoteApiServices,
   remoteApiServicesFactory,
 } from '@snap/camera-kit';
-import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import { useState } from 'react';
 
+function Demo() {
+  const [sensitivity, setSensitivity] = useState("0.5");
 async function renderAR() {
 
   const remoteApiService: RemoteApiService = {
-    apiSpecId: 'b032a38e-4fb9-4719-a0b5-b31d1ce63900',
+    apiSpecId: '875c6c5a-44e1-4a38-b2cd-d2e57473c4c3',
     getRequestHandler(request, lens) {
-      if (request.endpointId !== 'facearendpoint1') return;
-  
-      console.log(request);
-  
+      if (request.endpointId !== 'sensitivity') return;
+
       // Return a function that matches the RemoteApiRequestHandler type
       return (reply) => {
-        const waitForButtonClick = () => {
-          return new Promise<void>((resolve) => {
-            const button = document.getElementById('myButton');
-            if(!button) return;
-            button.addEventListener('click', () => {
-              resolve();
+        const waitForInput = () => {
+          return new Promise<String>((resolve) => {
+            const sensitivityInput = document.getElementById('mySensitivity');
+            if(!sensitivityInput) return;
+            sensitivityInput.addEventListener('input', (event) => {
+              const inputElement = event.target as HTMLInputElement;
+              resolve(inputElement.value);
               // prevents the promise from being resolved multiple times if the button is clicked more than once
             }, { once: true });
           });
         };
   
         // Handle the asynchronous behavior without marking the function as async
-        waitForButtonClick().then(() => {
+        waitForInput().then((val) => {
           reply({
             status: 'success',
             metadata: {},
-            body: new TextEncoder().encode(JSON.stringify('response from app!')),
+            body: new TextEncoder().encode(JSON.stringify(val)),
           });
         });
       };
     },
   };
-  
+
 
   // Bootstrap the CameraKit Web SDK: Download WebAssembly runtime and configure SDK
   const cameraKit = await bootstrapCameraKit(
@@ -80,17 +82,14 @@ async function renderAR() {
   await source.setRenderSize(window.innerWidth / 1.5, window.innerHeight / 1.5);
  
   // Loading a single lens and apply it to the session
-  var lensID = "ed7e4ee8-bc4f-4860-8cbc-ea290651e867";
+  var lensID = "cd45fb5a-75a3-4ce5-be76-76dbd4705bf4";
   var lensGroupID = "1002ed8b-a97a-42f0-842f-21b57f4a8a42";
-  // This is the test lens we made to test our API
-  var tempLensId = "0e0463a1-11bc-403b-96ea-27f9dac90730";
-  const lens = await cameraKit.lensRepository.loadLens(tempLensId, lensGroupID);
+  const lens = await cameraKit.lensRepository.loadLens(lensID, lensGroupID);
   await session.applyLens(lens, { launchParams: { text: "Some Text that we will use with a Lens" }});
   await session.play();
 }
-
-function Demo() {
   useEffect(() => {(renderAR());}, []);
+
     return (
       <Container className="px-4">
       <Row className="justify-content-center">
@@ -105,10 +104,11 @@ function Demo() {
         </Col>
       </Row>
       <Row className="justify-content-center">
-        <Col className="text-center">
-          <Button id="myButton" variant="secondary" size="lg">
-            Test Button
-          </Button>
+      <Col className="text-center">
+      <Form.Label>Sensitivity {sensitivity}</Form.Label>
+      <Form.Range id="mySensitivity" min={0} max={1} step={0.1} onChange={(event) => {const input = event.target as HTMLInputElement;
+    // Update the state with the new slider value
+    setSensitivity(input?.value);}}/>
       </Col>
       </Row>
     </Container>
