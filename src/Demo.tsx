@@ -18,7 +18,12 @@ function Demo() {
 async function renderAR() {
 
   const remoteApiService: RemoteApiService = {
-    apiSpecId: '875c6c5a-44e1-4a38-b2cd-d2e57473c4c3',
+    //Nithisha apiSpecId
+    //apiSpecId: '875c6c5a-44e1-4a38-b2cd-d2e57473c4c3',
+    //placeholder apiSpecId
+    //apiSpecId: '363ee2a5-ad35-4a5f-9547-d42b2c60a927',
+    //Button_pressed apiSpecId
+    apiSpecId: '0807319b-ca6b-404a-85a4-f7783636bc0d',
     getRequestHandler(request, lens) {
       if (request.endpointId !== 'sensitivity') return;
 
@@ -82,7 +87,7 @@ async function renderAR() {
   await source.setRenderSize(window.innerWidth / 1.5, window.innerHeight / 1.5);
  
   // Loading a single lens and apply it to the session
-  var lensID = "cd45fb5a-75a3-4ce5-be76-76dbd4705bf4";
+  var lensID = "a7947531-7f53-42f7-8448-ae26c5d4e3d5";
   var lensGroupID = "1002ed8b-a97a-42f0-842f-21b57f4a8a42";
   const lens = await cameraKit.lensRepository.loadLens(lensID, lensGroupID);
   await session.applyLens(lens, { launchParams: { text: "Some Text that we will use with a Lens" }});
