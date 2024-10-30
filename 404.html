@@ -9,12 +9,16 @@
 </head>
 <body>
     <script type="text/javascript">
-        // This HTML code defines a 404 error page that uses JavaScript
-        // to redirect users back to the main React application’s routing system
-        // var pathname = window.location.pathname;
-        // var redirectPath = '/facear' + pathname.replace('/facear', '');
-        // window.location.replace(redirectPath);
-        window.location.replace('/facear/');
+      // Get the current pathname
+       var pathname = window.location.pathname;
+        
+        // Construct the redirect path, ensuring it starts from /facear
+        // If the pathname is /facear/demo, we want to keep /demo
+        var redirectPath = '/facear' + pathname;
+
+        // Redirect to the correct path so React Router can handle it
+        window.location.replace(redirectPath);
+        //window.location.replace('/facear/');
     </script>
 </body>
 </html>
