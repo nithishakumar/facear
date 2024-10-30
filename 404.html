@@ -9,16 +9,15 @@
 </head>
 <body>
     <script type="text/javascript">
-      // Get the current pathname
-       var pathname = window.location.pathname;
-        
-        // Construct the redirect path, ensuring it starts from /facear
-        // If the pathname is /facear/demo, we want to keep /demo
-        var redirectPath = '/facear' + pathname;
+        // Get the current pathname
+        var pathname = window.location.pathname;
+
+        // If the pathname starts with /facear, use it as is
+        // Otherwise, append /facear to the pathname
+        var redirectPath = pathname.startsWith('/facear') ? pathname : '/facear' + pathname;
 
         // Redirect to the correct path so React Router can handle it
         window.location.replace(redirectPath);
-        //window.location.replace('/facear/');
     </script>
 </body>
 </html>
