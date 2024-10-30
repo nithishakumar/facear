@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // Redirect to index.html to let React Router handle the routing
+        var pathname = window.location.pathname;
+        var redirectPath = '/facear' + pathname.replace('/facear', '');
+        window.location.replace(redirectPath);
+    </script>
+</body>
+</html>
