@@ -189,7 +189,7 @@ function Demo() {
             </Col>
 
             <Col className="text-center" md="auto">
-              <span className="exercise-name fs-4"><b>Sample Exercise Name</b></span>
+              <span className="exercise-name fs-4"><b>Sample Exercise</b></span>
             </Col>
 
             <Col className="text-center next-button">

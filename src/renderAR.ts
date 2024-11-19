@@ -54,7 +54,8 @@ export async function renderAR() {
               };
 
               if(startButton){
-                startButton.addEventListener('click', handleClick, { once: true });
+                //startButton.addEventListener('click', handleClick, { once: true });
+                startButton.onclick = handleClick;
               }
               else if (sensitivityInput && toggleLeft && toggleRight && prevButton && nextButton){
                 sensitivityInput.addEventListener('input', (event) => {
@@ -66,10 +67,10 @@ export async function renderAR() {
                   });
                   // prevents the promise from being resolved multiple times if the button is clicked more than once
                 }, { once: true });
-                toggleLeft.addEventListener('change', handleToggle, { once: true });
-                toggleRight.addEventListener('change', handleToggle, { once: true });
-                prevButton.addEventListener('click', handleClick, { once: true });
-                nextButton.addEventListener('click', handleClick, { once: true });
+                toggleLeft.onchange = handleToggle;
+                toggleRight.onchange = handleToggle;
+                prevButton.onclick = handleClick;
+                nextButton.onclick = handleClick;
               }
               else
                 return;
