@@ -1,10 +1,5 @@
 import './Demo.css';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import { Tooltip, OverlayTrigger } from 'react-bootstrap';
+import { Container, Row, Col, Button, Form, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { renderAR } from './renderAR';
@@ -15,6 +10,10 @@ function Demo() {
   const [isLeftOn, setIsLeftOn] = useState(true);
   const [isRightOn, setIsRightOn] = useState(true);
   const [tooltipPosition, setTooltipPosition] = useState({ left: "50%" });
+  const [exerciseType, setExerciseType] = useState('timer'); // Default exercise type
+  const [exerciseDuration, setExerciseDuration] = useState("10"); // Default timer value in seconds
+  const [reps, setReps] = useState("10"); // Default number of reps
+  const [sets, setSets] = useState("3");  // Default number of sets
 
     useEffect(() => {
         renderAR();
@@ -53,6 +52,10 @@ function Demo() {
 
     const handleNext = () => {
       //TODO
+    };
+
+    const handleExerciseTypeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+      setExerciseType(event.target.value);
     };
 
     return (
@@ -140,6 +143,54 @@ function Demo() {
               </span>
             </OverlayTrigger>
             </Form.Label>
+
+            <hr className="separator" />
+            {/* Dropdown to select exercise type */}
+            <Form.Group controlId="exerciseTypeSelect" className="mb-3">
+              <Form.Label><b>Select Exercise Type</b></Form.Label>
+              <Form.Select value={exerciseType} onChange={handleExerciseTypeChange}>
+                <option value="timer">Timer Type</option>
+                <option value="repetitive">Repetitive Exercise Type</option>
+              </Form.Select>
+            </Form.Group>
+
+            {/* Conditional rendering based on exercise type */}
+            {exerciseType === 'timer' && (
+              <Form.Group controlId="exerciseDuration" className="mb-3">
+                <Form.Label><b>Exercise Duration (seconds)</b></Form.Label>
+                <Form.Control
+                    type="number"
+                    min={10}
+                    value={exerciseDuration}
+                    onChange={(e) => setExerciseDuration(e.target.value)}
+                  />
+                <Form.Text>{exerciseDuration} seconds</Form.Text>
+              </Form.Group>
+            )}
+
+            {exerciseType === 'repetitive' && (
+              <div>
+                <Form.Group controlId="exerciseReps" className="mb-3">
+                  <Form.Label><b>Number of Repetitions</b></Form.Label>
+                  <Form.Control
+                    type="number"
+                    min={1}
+                    value={reps}
+                    onChange={(e) => setReps(e.target.value)}
+                  />
+                </Form.Group>
+
+                <Form.Group controlId="exerciseSets" className="mb-3">
+                  <Form.Label><b>Number of Sets</b></Form.Label>
+                  <Form.Control
+                    type="number"
+                    min={1}
+                    value={sets}
+                    onChange={(e) => setSets(e.target.value)}
+                  />
+                </Form.Group>
+              </div>
+            )}
 
             <hr className="separator" />
             <Row className="mb-3">

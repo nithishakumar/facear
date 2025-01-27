@@ -18,7 +18,7 @@ export async function renderAR() {
       //apiSpecId: '875c6c5a-44e1-4a38-b2cd-d2e57473c4c3',
       //placeholder apiSpecId
       //apiSpecId: '363ee2a5-ad35-4a5f-9547-d42b2c60a927',
-      //Sensitivity apiSpecId
+      //Difficulty apiSpecId
       apiSpecId: '266d9e05-8d86-4975-9729-6313b25651bd',
       getRequestHandler(request, lens) {
         if (request.endpointId !== 'sensitivity') return;
@@ -139,7 +139,7 @@ export async function renderAR() {
     await source.setRenderSize(window.innerWidth/1.8, window.innerHeight/1.5);
    
     // Loading a single lens and apply it to the session
-    var lensID = "a7947531-7f53-42f7-8448-ae26c5d4e3d5";
+    var lensID = "40476bf8-01c0-45d9-b082-74392206e5e2";
     var lensGroupID = "1002ed8b-a97a-42f0-842f-21b57f4a8a42";
     const lens = await cameraKit.lensRepository.loadLens(lensID, lensGroupID);
     await session.applyLens(lens, { launchParams: { text: "Some Text that we will use with a Lens" }});
