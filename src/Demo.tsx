@@ -58,6 +58,18 @@ function Demo() {
       setExerciseType(event.target.value);
     };
 
+    const handleUpdate = () => {
+      console.log("Settings updated:", {
+        sensitivity,
+        exerciseType,
+        exerciseDuration,
+        reps,
+        sets,
+        isLeftOn,
+        isRightOn
+      });
+    };
+
     return (
       <Container className="px-4">
       <Row className="justify-content-center">
@@ -174,6 +186,7 @@ function Demo() {
                   <Form.Label><b>Number of Repetitions</b></Form.Label>
                   <Form.Control
                     type="number"
+                    id="numReps"
                     min={1}
                     value={reps}
                     onChange={(e) => setReps(e.target.value)}
@@ -184,6 +197,7 @@ function Demo() {
                   <Form.Label><b>Number of Sets</b></Form.Label>
                   <Form.Control
                     type="number"
+                    id="numSets"
                     min={1}
                     value={sets}
                     onChange={(e) => setSets(e.target.value)}
@@ -227,7 +241,18 @@ function Demo() {
                 </span>
               </OverlayTrigger>
               </div>
-              
+            </Col>
+            </Row>
+            <hr className="separator" />
+            <Row className="mb-3">
+            <Col xs={6}>
+            <Button 
+              variant="primary" 
+              className="w-100 mt-3" 
+              onClick={handleUpdate}
+            >
+              Update
+            </Button>
             </Col>
             </Row>
           </Col>

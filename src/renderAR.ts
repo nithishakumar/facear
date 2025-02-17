@@ -18,7 +18,7 @@ export async function renderAR() {
       //apiSpecId: '875c6c5a-44e1-4a38-b2cd-d2e57473c4c3',
       //placeholder apiSpecId
       //apiSpecId: '363ee2a5-ad35-4a5f-9547-d42b2c60a927',
-      //Difficulty apiSpecId
+      //Sensitivity apiSpecId
       apiSpecId: '266d9e05-8d86-4975-9729-6313b25651bd',
       getRequestHandler(request, lens) {
         if (request.endpointId !== 'sensitivity') return;
@@ -34,6 +34,8 @@ export async function renderAR() {
               const toggleRight = document.getElementById('rightSwitch') as HTMLInputElement;
               const prevButton = document.getElementById('prevButton');
               const nextButton = document.getElementById('nextButton');
+              const numReps = document.getElementById('numReps') as HTMLInputElement;
+              const numSets = document.getElementById('numSets') as HTMLInputElement;
 
               const handleClick = (event: Event) => {
                 const buttonElement = event.target as HTMLButtonElement;
@@ -50,6 +52,17 @@ export async function renderAR() {
                   elementName: switchElement.id,
                   value: "",
                   pressed: switchElement.checked,  // Capture the on/off state
+                });
+              };
+
+              const handleInputChange = () => {
+                resolve({
+                  elementName: "setsAndReps",
+                  value: JSON.stringify({
+                    reps: numReps?.value || "5",
+                    sets: numSets?.value || "3",
+                  }),
+                  pressed: false,
                 });
               };
 
@@ -71,6 +84,11 @@ export async function renderAR() {
                 toggleRight.onchange = handleToggle;
                 prevButton.onclick = handleClick;
                 nextButton.onclick = handleClick;
+
+                if (numReps && numSets) {
+                  numReps.addEventListener('input', handleInputChange);
+                  numSets.addEventListener('input', handleInputChange);
+                }
               }
               else
                 return;
