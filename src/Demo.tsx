@@ -5,6 +5,11 @@ import { useState } from 'react';
 import { renderAR } from './renderAR';
 
 function Demo() {
+  type LensData = {
+    completedReps?: number;
+  };
+
+  const [lensData, setLensData] = useState<LensData | null>(null);
   const [sensitivity, setSensitivity] = useState("0.5");
   const [isStarted, setIsStarted] = useState(false);
   const [isLeftOn, setIsLeftOn] = useState(true);
@@ -16,7 +21,7 @@ function Demo() {
   const [sets, setSets] = useState("3");  // Default number of sets
 
     useEffect(() => {
-        renderAR();
+        renderAR(setLensData);
     }, []); 
 
     const handleStart = () => {
@@ -58,25 +63,16 @@ function Demo() {
       setExerciseType(event.target.value);
     };
 
-    const handleUpdate = () => {
-      console.log("Settings updated:", {
-        sensitivity,
-        exerciseType,
-        exerciseDuration,
-        reps,
-        sets,
-        isLeftOn,
-        isRightOn
-      });
-    };
-
     return (
       <Container className="px-4">
-      <Row className="justify-content-center">
-        <Col className="text-center fs-1">
-          <b><span className='gradient-text'>Demo</span></b>
-        </Col>
-      </Row>
+        <div className="top-right-text">
+          {lensData?.completedReps ?? 'Loading...'}
+        </div>
+        <Row className="justify-content-center">
+          <Col className="text-center fs-1">
+            <b><span className='gradient-text'>Demo</span></b>
+          </Col>
+        </Row>
 
       {!isStarted ? (
         // Before clicking the start button, show the exercise description
@@ -244,17 +240,6 @@ function Demo() {
             </Col>
             </Row>
             <hr className="separator" />
-            <Row className="mb-3">
-            <Col xs={6}>
-            <Button 
-              variant="primary" 
-              className="w-100 mt-3" 
-              onClick={handleUpdate}
-            >
-              Update
-            </Button>
-            </Col>
-            </Row>
           </Col>
           
           <Col md={8} className="text-center">
