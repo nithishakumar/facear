@@ -6,6 +6,7 @@ import Home from './Home';
 import Development from './Demo';
 import Footer from './Footer';
 import About from './About';
+import Timer from './TimerDemo';
 
 const App: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const App: React.FC = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/demo" element={<Development />} />
+          <Route path="/timer" element={<Timer />} />
         </Routes>
         <div className='p-4 mb-4'></div>
         <Footer />
