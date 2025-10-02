@@ -18,26 +18,86 @@
 }
 
 .bg-gray {
-    background-color: #f0f0f0; /* Light gray background */
-    border: 1px solid #ccc; /* Optional border to make the section more distinct */
-    border-radius: 10px; /* Rounded corners for a softer look */
-    padding: 20px; /* Add some padding for spacing */
+    background-color: #f8f9fa;
+    border: 1.5px solid #d1d5db;
+    border-radius: 18px;
+    padding: 40px 40px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+    font-size: 1.18rem; 
+    transition: box-shadow 0.3s, border-color 0.3s;
+    max-height: 70vh;
+    /* left: -10px; */
+    position: relative; 
+      display: flex; /* Enable flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    overflow: hidden; /* Hide excess content */
+}
+
+.bg-gray > * {
+    flex-shrink: 1; /* Allow child elements to shrink */
+    max-width: 100%; /* Prevent overflow */
+    max-height: 100%; /* Prevent overflow */
+    object-fit: contain; /* Ensure content scales proportionally */
+}
+
+.recording-indicator {
+    position: absolute;
+    top: 15px;
+    left: 50px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 14px;
+    background: transparent; /* Remove background */
+    padding: 0;
+    border-radius: 0; /* Remove border radius since there's no background */
+}
+
+.recording-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid #dc3545;
+    transition: background-color 0.1s ease;
+}
+
+.recording-dot.active {
+    background-color: #dc3545;
 }
 
 .settings-panel {
-    margin-right: 20px; /* Adjust the space between the settings panel and the face lens */
+    background-color: white; 
+    border: 2px solid white; 
+    border-radius: 12px;
+    padding: 28px 24px; 
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07); 
+    font-size: 1.1rem; 
+    transition: box-shadow 0.3s;
+    max-height: 70vh;
+    overflow-y: auto;
 }
 
-.exercise-panel{
-    margin-right: 20px;
+.exercise-panel {
+    background-color: white; 
+    border: 2px solid white; 
+    border-radius: 12px; 
+    padding: 28px 24px; 
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07); 
+    font-size: 1.1rem; 
+    transition: box-shadow 0.3s;
+    max-height: 40vh;
 }
 
-.sensitivity-label {
+.difficulty-label {
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-.sensitivity-infoIcon {
+.difficulty-infoIcon {
   margin-left: 5px;
   cursor: pointer;
   font-size: 0.7rem;
@@ -115,4 +175,40 @@ input[type="range"]::-webkit-slider-runnable-track {
   color: white;
   padding: 8px 12px;
   border-radius: 5px;
+}
+
+/* Simple hover effects for buttons with inline styles */
+#startButton:hover,
+#prevButton:hover,
+#nextButton:hover,
+#startRecordingButton:hover:not(:disabled),
+#stopRecordingButton:hover:not(:disabled) {
+  filter: brightness(0.92) !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+/* Add transition to all buttons for smooth effect */
+#startButton,
+#prevButton,
+#nextButton,
+#startRecordingButton,
+#stopRecordingButton {
+  transition: all 0.2s ease-in-out !important;
+}
+
+.demo-title {
+  position: absolute;
+  top: -60px;
+  left: 20px;
+  margin: 0;
+  z-index: 10;
+}
+
+@media (max-width: 992px) {
+  .demo-title {
+    position: static;
+    margin-top: 20px;
+    text-align: left;
+  }
 }
