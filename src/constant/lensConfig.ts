@@ -16,7 +16,7 @@ export type LensConfig = {
 
 export const lensConfigs: Record<string, LensConfig> = {
   basic: {
-    lensID: "2317d687-d5ce-4ccf-95ce-06ab74358a93",
+    lensID: "fd68fd9c-c7a4-4ab2-84dd-d48a59e4bb67",
     name: "Basic Lens",
     description: "In this exercise, you will have three sample facial exercises to explore FaceAR features using your WebCam. After starting the exercise, you can adjust your difficulty level and switch to unilateral mode in the setting panel.",
     features: {
