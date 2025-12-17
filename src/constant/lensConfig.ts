@@ -89,12 +89,9 @@ export const lensConfigs: Record<string, LensConfig> = {
             showExerciseSelection: true,
         },
         availableExercises: [
-            "Open Mouth",
-            "Scrunch Eyes",
-            "Smile",
-            "Suck In Cheeks",
-            "Eyebrow Raise",
-            "Pucker Lips"
+            "Eye Blink",
+            "Raise Eyebrows",
+            "Lower Eyebrows"
         ]
     },
     timerMouth: {
