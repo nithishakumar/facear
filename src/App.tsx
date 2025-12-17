@@ -11,6 +11,8 @@ import { LensConfig, lensConfigs } from './constant/lensConfig';
 const lensIDs = {
   basic: "2317d687-d5ce-4ccf-95ce-06ab74358a93",
   jumpGame: "0b504864-00df-4321-8fdf-0c86bd5bcfaa",
+  timerEyes: "c1cc7ddb-5453-4c4c-b21a-fa1d043dca50",
+  timerMouth: "d4da7440-1b51-466f-860e-d8fee53215c5",
   timer: "623ea02f-ff58-48ce-a42d-badce1fecdb6",
   lip: "00120037-aec6-4798-8212-ffe013f704e8",
   eyeAndBrow: "54c0c4ce-d0d0-4cb7-9845-e0a322dc8249"
@@ -27,7 +29,8 @@ const App: React.FC = () => {
           <Route path="/about" element={<About />} />
           <Route path="/demo/basic" element={<Development key="basic" config={lensConfigs.basic}/>} />
           <Route path="/demo/jump-game" element={<Development key="jump-game" config={lensConfigs.jumpGame}/>} />
-          <Route path="/demo/timer" element={<Development key="timer" config={lensConfigs.timer}/>} />
+          <Route path="/demo/timerEyes" element={<Development key="timer" config={lensConfigs.timerEyes}/>} />
+          <Route path="/demo/timerMouth" element={<Development key="timer" config={lensConfigs.timerMouth}/>} />
           <Route path="/demo/lip" element={<Development key="lip" config={lensConfigs.lip}/>} />
           <Route path="/demo/eye-and-brow" element={<Development key="eye-and-brow" config={lensConfigs.eyeAndBrow}/>} />
         </Routes>
