@@ -78,7 +78,7 @@ export const lensConfigs: Record<string, LensConfig> = {
     timerEyes: {
         lensID: "c1cc7ddb-5453-4c4c-b21a-fa1d043dca50",
         name: "Timer Exercise for Eyes",
-        description: "In this exercise, you will perform a timed facial exercise. You need to focus on sustained facial expressions and muscle endurance. After starting the exercise, you can adjust your difficulty level, switch to unilateral mode, and select the available exercises in the setting panel.",
+        description: "In this exercise, you will perform a timed eyes exercise. You need to focus on sustained facial expressions and muscle endurance. After starting the exercise, you can adjust your difficulty level, switch to unilateral mode, and select the available exercises in the setting panel.",
         features: {
             exerciseTypes: ["timer"],
             showBilateralToggles: true,
@@ -97,7 +97,7 @@ export const lensConfigs: Record<string, LensConfig> = {
     timerMouth: {
         lensID: "d4da7440-1b51-466f-860e-d8fee53215c5",
         name: "Timer Exercise for Mouth",
-        description: "In this exercise, you will perform a timed facial exercise. You need to focus on sustained facial expressions and muscle endurance. After starting the exercise, you can adjust your difficulty level, switch to unilateral mode, and select the available exercises in the setting panel.",
+        description: "In this exercise, you will perform a timed mouth exercise. You need to focus on sustained facial expressions and muscle endurance. After starting the exercise, you can adjust your difficulty level, switch to unilateral mode, and select the available exercises in the setting panel.",
         features: {
             exerciseTypes: ["timer"],
             showBilateralToggles: true,
