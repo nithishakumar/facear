@@ -75,6 +75,45 @@ export const lensConfigs: Record<string, LensConfig> = {
       "Pucker Lips"
     ]
   },
+    timerEyes: {
+        lensID: "c1cc7ddb-5453-4c4c-b21a-fa1d043dca50",
+        name: "Timer Exercise for Eyes",
+        description: "In this exercise, you will perform a timed eyes exercise. You need to focus on sustained facial expressions and muscle endurance. After starting the exercise, you can adjust your difficulty level, switch to unilateral mode, and select the available exercises in the setting panel.",
+        features: {
+            exerciseTypes: ["timer"],
+            showBilateralToggles: true,
+            showDifficultySlider: true,
+            showRepsAndSets: false,
+            showDuration: true,
+            showSpeedSlider: false,
+            showExerciseSelection: true,
+        },
+        availableExercises: [
+            "Eye Blink",
+            "Raise Eyebrows",
+            "Lower Eyebrows"
+        ]
+    },
+    timerMouth: {
+        lensID: "d4da7440-1b51-466f-860e-d8fee53215c5",
+        name: "Timer Exercise for Mouth",
+        description: "In this exercise, you will perform a timed mouth exercise. You need to focus on sustained facial expressions and muscle endurance. After starting the exercise, you can adjust your difficulty level, switch to unilateral mode, and select the available exercises in the setting panel.",
+        features: {
+            exerciseTypes: ["timer"],
+            showBilateralToggles: true,
+            showDifficultySlider: true,
+            showRepsAndSets: false,
+            showDuration: true,
+            showSpeedSlider: false,
+            showExerciseSelection: true,
+        },
+        availableExercises: [
+            "Jaw Open",
+            "Smile",
+            "Frown",
+            "Pucker Lips"
+        ]
+    },
   lip: {
     lensID: "00120037-aec6-4798-8212-ffe013f704e8",
     name: "Lip Exercise",
