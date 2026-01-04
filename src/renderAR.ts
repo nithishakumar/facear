@@ -101,16 +101,6 @@ export async function renderAR(
                 resolve(firstSetting);
               };
 
-              const handleReinit = (event: Event) => {
-                resolve({
-                  elementName: "reinitSettings",
-                  value: "",
-                  pressed: true,
-                });
-              };
-
-
-
               if(startButton){
                 //startButton.addEventListener('click', handleClick, { once: true });
                 startButton.onclick = handleClick;
@@ -136,7 +126,7 @@ export async function renderAR(
                 prevButton.onclick = handleClick;
                 nextButton.onclick = handleClick;
                 confirmButton.onclick = handleConfirm;
-                reinitButton.onclick = handleReinit;
+                reinitButton.onclick = handleClick;
               } else {
                 return;
               }
