@@ -44,7 +44,8 @@ export async function renderAR(
           const waitForInput = () => {
             return new Promise<UIData>((resolve) => {
               const startButton = document.getElementById('startButton');
-              const difficultyInput = document.getElementById('myDifficulty');
+              const difficultyInput = document.getElementById('myDifficulty') as HTMLInputElement;
+              const difficultyNumberInput = document.getElementById('myDifficultyInput') as HTMLInputElement;
               const toggleLeft = document.getElementById('leftSwitch') as HTMLInputElement;
               const toggleRight = document.getElementById('rightSwitch') as HTMLInputElement;
               const prevButton = document.getElementById('prevButton');
@@ -85,15 +86,23 @@ export async function renderAR(
                 //startButton.addEventListener('click', handleClick, { once: true });
                 startButton.onclick = handleClick;
               }
-              else if (difficultyInput && toggleLeft && toggleRight && prevButton && nextButton){
-                difficultyInput.addEventListener('input', (event) => {
-                  const inputElement = event.target as HTMLInputElement;
-                  resolve({
-                    elementName: "sensitivity",
-                    value: inputElement.value,
-                    pressed: false,
-                  });
-                }, { once: false });
+
+              const haveControls = (difficultyInput || difficultyNumberInput) && toggleLeft && toggleRight && prevButton && nextButton;
+              if (haveControls) {
+                const bindDifficultyInput = (inputEl: HTMLInputElement | null) => {
+                  if (!inputEl) return;
+                  inputEl.addEventListener('input', (event) => {
+                    const inputElement = event.target as HTMLInputElement;
+                    resolve({
+                      elementName: "sensitivity",
+                      value: inputElement.value,
+                      pressed: false,
+                    });
+                  }, { once: false });
+                };
+
+                bindDifficultyInput(difficultyInput);
+                bindDifficultyInput(difficultyNumberInput);
                 toggleLeft.onchange = handleToggle;
                 toggleRight.onchange = handleToggle;
                 prevButton.onclick = handleClick;
@@ -103,9 +112,9 @@ export async function renderAR(
                   numReps.addEventListener('input', handleInputChange);
                   numSets.addEventListener('input', handleInputChange);
                 }
-              }
-              else
+              } else {
                 return;
+              }
             });
           };
 

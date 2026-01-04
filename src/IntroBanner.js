@@ -28,7 +28,16 @@ function IntroBanner() {
             <div className="card container-bg">
               <div className="card-body">
                 <div className="text-center card-title card-title-color fs-4">Funded by</div>
-                <Link to="https://ar.snap.com/" target="_blank" rel="noopener noreferrer"><Image src={Snap} width="468" height="658" fluid /></Link>
+
+                <div className="d-flex justify-content-center align-items-center gap-4 flex-wrap">
+                  <Link to="https://ar.snap.com/" target="_blank" rel="noopener noreferrer">
+                    <Image src={Snap} width="280" fluid />
+                  </Link>
+
+                  <Link to="https://www.michiganmedicine.org/" target="_blank" rel="noopener noreferrer">
+                    <Image src={MichiganMedicine} width="280" fluid />
+                  </Link>
+                </div>
               </div>
             </div>
           </Col>

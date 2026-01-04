@@ -81,14 +81,19 @@ function Demo({ config }: DemoProps) {
   useEffect(() => {
     let cleanup: (() => void) | undefined;
 
+    const clampDifficulty = (value: number, min = minDifficulty) => {
+      const clamped = Math.min(1, Math.max(min, value));
+      return Number(clamped.toFixed(2));
+    };
+
     const dataHandlers = {
       setDifficulty: (value: string) => {
-        setDifficulty(Math.max(0, parseFloat(value) + 0.05).toString());
-        setMinDifficulty(Math.max(0, parseFloat(value) + 0.05));
-
-        const sliderWidth = 200;
-        const thumbPosition = (+value - minDifficulty) * sliderWidth / (1 - minDifficulty);
-        setTooltipPosition({ left: `${thumbPosition}px` });
+        const numeric = Math.max(0, parseFloat(value) + 0.05);
+        const newMin = Math.max(0, parseFloat(value) + 0.05);
+        const rounded = clampDifficulty(numeric, newMin);
+        setDifficulty(rounded.toString());
+        setMinDifficulty(newMin);
+        updateTooltipPosition(rounded.toString(), 200, newMin);
       }
     };
 
@@ -120,13 +125,36 @@ function Demo({ config }: DemoProps) {
     setIsStarted(true);
   };
 
+  const updateTooltipPosition = (value: string, sliderWidth = 200, min = minDifficulty) => {
+    const numeric = parseFloat(value);
+    if (Number.isNaN(numeric)) return;
+    const clamped = Math.min(1, Math.max(min, numeric));
+    const range = 1 - min;
+    const thumbPosition = range > 0 ? ((clamped - min) * sliderWidth) / range : 0;
+    setTooltipPosition({ left: `${thumbPosition}px` });
+  };
+
   const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const input = event.target;
-    setDifficulty(input.value);
-    // Update tooltip position based on slider's thumb
-    const sliderWidth = input.offsetWidth;
-    const thumbPosition = (+input.value - 0.5) * sliderWidth;
-    setTooltipPosition({ left: `${thumbPosition}px` });
+    const numeric = parseFloat(input.value);
+    const formatted = Number(Math.min(1, Math.max(minDifficulty, numeric)).toFixed(2));
+    setDifficulty(formatted.toString());
+    const sliderWidth = input.offsetWidth || 200;
+    updateTooltipPosition(formatted.toString(), sliderWidth);
+  };
+
+  const handleDifficultyInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const val = event.target.value;
+    const numeric = parseFloat(val);
+    if (Number.isNaN(numeric)) {
+      setDifficulty(val);
+      return;
+    }
+
+    const clamped = Math.min(1, Math.max(minDifficulty, numeric));
+    const rounded = Number(clamped.toFixed(2)).toString();
+    setDifficulty(rounded);
+    updateTooltipPosition(rounded);
   };
 
   const handleToggleSide = (side: "left" | "right") => {
@@ -507,11 +535,21 @@ function Demo({ config }: DemoProps) {
                 id="myDifficulty"
                 min={minDifficulty}
                 max={1}
-                step={0.1}
+                step={0.01}
                 value={difficulty}
                 onChange={handleSliderChange}
               />
             </OverlayTrigger>
+            <Form.Control
+              id="myDifficultyInput"
+              type="number"
+              min={0}
+              max={1}
+              step={0.01}
+              value={difficulty}
+              onChange={handleDifficultyInputChange}
+              className="mt-2"
+            />
             <Form.Label className="difficulty-label">
               Difficulty
               <OverlayTrigger
