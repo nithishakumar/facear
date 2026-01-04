@@ -485,7 +485,6 @@ function Demo({ config }: DemoProps) {
 
             <hr className="separator" />
 
-            {/* Exercise Selection Dropdown - Add this FIRST in the settings */}
             {features.showExerciseSelection && 
              availableExercises && 
              availableExercises.length > 0 && (
@@ -710,6 +709,32 @@ function Demo({ config }: DemoProps) {
                 <hr className="separator" />
               </div>
             )}
+
+            {/* Confirm and Reinit Buttons */}
+            <div className="d-flex justify-content-between mt-4">
+              <Button
+                id="reinitButton"
+                variant="secondary"
+                style={{
+                  backgroundColor: "#6c757d",
+                  borderColor: "#6c757d",
+                  color: "white",
+                }}
+              >
+                Reinit
+              </Button>
+              <Button
+                id="confirmButton"
+                variant="primary"
+                style={{
+                  backgroundColor: "#0284c7",
+                  borderColor: "#2563eb",
+                  color: "white",
+                }}
+              >
+                Confirm
+              </Button>
+            </div>
           </Col>
 
           <Col md={8} className="text-center">

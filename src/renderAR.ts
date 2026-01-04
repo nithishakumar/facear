@@ -17,6 +17,10 @@ export async function renderAR(
     value: string;
     pressed: boolean;
   };
+
+  // Queue to hold batched settings from confirm button
+  let settingsQueue: UIData[] = [];
+
     const remoteApiService: RemoteApiService = {
       //Sensitivity apiSpecId
       //apiSpecId: '266d9e05-8d86-4975-9729-6313b25651bd',
@@ -43,6 +47,13 @@ export async function renderAR(
 
           const waitForInput = () => {
             return new Promise<UIData>((resolve) => {
+              // Check if there are queued settings from confirm button
+              if (settingsQueue.length > 0) {
+                const nextSetting = settingsQueue.shift()!;
+                resolve(nextSetting);
+                return;
+              }
+
               const startButton = document.getElementById('startButton');
               const difficultyInput = document.getElementById('myDifficulty') as HTMLInputElement;
               const difficultyNumberInput = document.getElementById('myDifficultyInput') as HTMLInputElement;
@@ -52,6 +63,8 @@ export async function renderAR(
               const nextButton = document.getElementById('nextButton');
               const numReps = document.getElementById('numReps') as HTMLInputElement;
               const numSets = document.getElementById('numSets') as HTMLInputElement;
+              const confirmButton = document.getElementById('confirmButton');
+              const reinitButton = document.getElementById('reinitButton');
 
               const handleClick = (event: Event) => {
                 const buttonElement = event.target as HTMLButtonElement;
@@ -62,17 +75,19 @@ export async function renderAR(
                 });
               };
 
-              const handleToggle = (event: Event) => {
-                const switchElement = event.target as HTMLInputElement;
-                resolve({
-                  elementName: switchElement.id,
+              const handleConfirm = (event: Event) => {
+                // Queue all settings to be sent individually
+                settingsQueue.push({
+                  elementName: "leftSwitch",
                   value: "",
-                  pressed: switchElement.checked,  // Capture the on/off state
+                  pressed: toggleLeft?.checked || false,
                 });
-              };
-
-              const handleInputChange = () => {
-                resolve({
+                settingsQueue.push({
+                  elementName: "rightSwitch",
+                  value: "",
+                  pressed: toggleRight?.checked || false,
+                });
+                settingsQueue.push({
                   elementName: "setsAndReps",
                   value: JSON.stringify({
                     reps: numReps?.value || "5",
@@ -80,15 +95,30 @@ export async function renderAR(
                   }),
                   pressed: false,
                 });
+                
+                // Resolve with the first setting immediately
+                const firstSetting = settingsQueue.shift()!;
+                resolve(firstSetting);
               };
+
+              const handleReinit = (event: Event) => {
+                resolve({
+                  elementName: "reinitSettings",
+                  value: "",
+                  pressed: true,
+                });
+              };
+
+
 
               if(startButton){
                 //startButton.addEventListener('click', handleClick, { once: true });
                 startButton.onclick = handleClick;
               }
 
-              const haveControls = (difficultyInput || difficultyNumberInput) && toggleLeft && toggleRight && prevButton && nextButton;
+              const haveControls = (difficultyInput || difficultyNumberInput) && prevButton && nextButton && confirmButton && reinitButton;
               if (haveControls) {
+                // Only difficulty should work in real-time
                 const bindDifficultyInput = (inputEl: HTMLInputElement | null) => {
                   if (!inputEl) return;
                   inputEl.addEventListener('input', (event) => {
@@ -103,15 +133,10 @@ export async function renderAR(
 
                 bindDifficultyInput(difficultyInput);
                 bindDifficultyInput(difficultyNumberInput);
-                toggleLeft.onchange = handleToggle;
-                toggleRight.onchange = handleToggle;
                 prevButton.onclick = handleClick;
                 nextButton.onclick = handleClick;
-
-                if (numReps && numSets) {
-                  numReps.addEventListener('input', handleInputChange);
-                  numSets.addEventListener('input', handleInputChange);
-                }
+                confirmButton.onclick = handleConfirm;
+                reinitButton.onclick = handleReinit;
               } else {
                 return;
               }
