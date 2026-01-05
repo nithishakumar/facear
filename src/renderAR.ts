@@ -34,9 +34,9 @@ export async function renderAR(
           const params = request.parameters;
           if (params) {
             // Handle sensitivity updates
-            if ('sensitivity' in params && typeof params.sensitivity === 'string') {
-              dataHandlers.setDifficulty(params.sensitivity);
-            }
+            // if ('sensitivity' in params && typeof params.sensitivity === 'string') {
+            //   dataHandlers.setDifficulty(params.sensitivity);
+            // }
             return;
           }
         }

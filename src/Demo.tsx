@@ -29,7 +29,7 @@ function Demo({ config }: DemoProps) {
 
   const [lensData, setLensData] = useState<LensData | null>(null);
   const [difficulty, setDifficulty] = useState("0.5");
-  const [minDifficulty, setMinDifficulty] = useState(0.5);
+  const [minDifficulty, setMinDifficulty] = useState(0);
   const [isStarted, setIsStarted] = useState(false);
   const [isLeftOn, setIsLeftOn] = useState(true);
   const [isRightOn, setIsRightOn] = useState(true);
