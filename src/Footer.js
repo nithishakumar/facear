@@ -33,7 +33,7 @@ function Footer() {
                   <Link to="/about" className="contact-color" onClick={scrollToTop}>About</Link>
                 </Col>
                 <Col xs={12} sm={3} className="text-center pt-2">
-                  <Link to="/demo" className="contact-color" onClick={scrollToTop}>Demo</Link>
+                  <Link to="/demo/basic" className="contact-color" onClick={scrollToTop}>Demo</Link>
                 </Col>
               </Row>
             </Container>

@@ -532,7 +532,7 @@ function Demo({ config }: DemoProps) {
             >
               <Form.Range
                 id="myDifficulty"
-                min={minDifficulty}
+                min={0}
                 max={1}
                 step={0.01}
                 value={difficulty}
