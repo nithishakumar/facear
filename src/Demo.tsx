@@ -34,6 +34,8 @@ function Demo({ config }: DemoProps) {
   const [isLeftOn, setIsLeftOn] = useState(true);
   const [isRightOn, setIsRightOn] = useState(true);
   const [isRecording, setIsRecording] = useState(false);
+  const [hasConfirmed, setHasConfirmed] = useState(false);
+  const [hasApplied, setHasApplied] = useState(false);
   const [exerciseType, setExerciseType] = useState("timer"); // Default exercise type
   const [exerciseDuration, setExerciseDuration] = useState("10"); // Default timer value in seconds
   const [reps, setReps] = useState("5"); // Default number of reps
@@ -123,6 +125,8 @@ function Demo({ config }: DemoProps) {
     setIsStarted(true);
   };
 
+  const isApplyDisabled = !hasConfirmed || hasApplied;
+
   const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const input = event.target;
     const numeric = parseFloat(input.value);
@@ -206,6 +210,15 @@ function Demo({ config }: DemoProps) {
       isLeftOn,
       isRightOn,
     });
+  };
+
+  const handleConfirmClick = () => {
+    setHasConfirmed(true);
+  };
+
+  const handleApplyClick = () => {
+    if (isApplyDisabled) return;
+    setHasConfirmed(false);
   };
 
   async function init() {
@@ -680,17 +693,20 @@ function Demo({ config }: DemoProps) {
               <Button
                 id="reinitButton"
                 variant="secondary"
+                disabled={isApplyDisabled}
+                onClick={handleApplyClick}
                 style={{
-                  backgroundColor: "#6c757d",
-                  borderColor: "#6c757d",
+                  backgroundColor: isApplyDisabled ? "#9ca3af" : "#6c757d",
+                  borderColor: isApplyDisabled ? "#9ca3af" : "#6c757d",
                   color: "white",
                 }}
               >
-                Reinit
+                Apply
               </Button>
               <Button
                 id="confirmButton"
                 variant="primary"
+                onClick={handleConfirmClick}
                 style={{
                   backgroundColor: "#0284c7",
                   borderColor: "#2563eb",
