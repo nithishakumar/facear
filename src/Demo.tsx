@@ -34,7 +34,6 @@ function Demo({ config }: DemoProps) {
   const [isLeftOn, setIsLeftOn] = useState(true);
   const [isRightOn, setIsRightOn] = useState(true);
   const [isRecording, setIsRecording] = useState(false);
-  const [tooltipPosition, setTooltipPosition] = useState({ left: "50%" });
   const [exerciseType, setExerciseType] = useState("timer"); // Default exercise type
   const [exerciseDuration, setExerciseDuration] = useState("10"); // Default timer value in seconds
   const [reps, setReps] = useState("5"); // Default number of reps
@@ -93,7 +92,6 @@ function Demo({ config }: DemoProps) {
         const rounded = clampDifficulty(numeric, newMin);
         setDifficulty(rounded.toString());
         setMinDifficulty(newMin);
-        updateTooltipPosition(rounded.toString(), 200, newMin);
       }
     };
 
@@ -125,22 +123,11 @@ function Demo({ config }: DemoProps) {
     setIsStarted(true);
   };
 
-  const updateTooltipPosition = (value: string, sliderWidth = 200, min = minDifficulty) => {
-    const numeric = parseFloat(value);
-    if (Number.isNaN(numeric)) return;
-    const clamped = Math.min(1, Math.max(min, numeric));
-    const range = 1 - min;
-    const thumbPosition = range > 0 ? ((clamped - min) * sliderWidth) / range : 0;
-    setTooltipPosition({ left: `${thumbPosition}px` });
-  };
-
   const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const input = event.target;
     const numeric = parseFloat(input.value);
     const formatted = Number(Math.min(1, Math.max(minDifficulty, numeric)).toFixed(2));
     setDifficulty(formatted.toString());
-    const sliderWidth = input.offsetWidth || 200;
-    updateTooltipPosition(formatted.toString(), sliderWidth);
   };
 
   const handleDifficultyInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -154,7 +141,6 @@ function Demo({ config }: DemoProps) {
     const clamped = Math.min(1, Math.max(minDifficulty, numeric));
     const rounded = Number(clamped.toFixed(2)).toString();
     setDifficulty(rounded);
-    updateTooltipPosition(rounded);
   };
 
   const handleToggleSide = (side: "left" | "right") => {
@@ -510,35 +496,14 @@ function Demo({ config }: DemoProps) {
                 <hr className="separator" />
               </div>
             )}
-
-            <OverlayTrigger
-              placement="top"
-              overlay={
-                <Tooltip id="tooltip-top">
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: "-30px",
-                      left: tooltipPosition.left,
-                      color: "#000",
-                      padding: "5px",
-                      borderRadius: "5px",
-                    }}
-                  >
-                    {difficulty}
-                  </div>
-                </Tooltip>
-              }
-            >
-              <Form.Range
-                id="myDifficulty"
-                min={0}
-                max={1}
-                step={0.01}
-                value={difficulty}
-                onChange={handleSliderChange}
-              />
-            </OverlayTrigger>
+            <Form.Range
+              id="myDifficulty"
+              min={0}
+              max={1}
+              step={0.01}
+              value={difficulty}
+              onChange={handleSliderChange}
+            />
             <Form.Control
               id="myDifficultyInput"
               type="number"
