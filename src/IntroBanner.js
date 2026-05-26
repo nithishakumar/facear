@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
-import useCase1 from './img/useCase1.png';
+import useCase1 from './img/Anisha1.png';
 import Snap from './img/Snap.png'
 import MichiganMedicine from './img/MichiganMedicine.png'
 import { Link } from 'react-router-dom';
@@ -18,7 +18,7 @@ function IntroBanner() {
             <h1 className='text-center text-lg-start'><b>Augmented Reality for <span className='gradient-text'>Facial Rehabilitation.</span></b></h1>
           </Col>
           <Col className="col-auto">
-            <Image className='pt-2' src={useCase1} width="468" height="658" fluid />
+            <Image className='pt-2' src={useCase1} width="468" height="658" style={{ objectFit: 'cover' }} fluid />
           </Col>
         </Row>
       </Container>
