@@ -1,4 +1,4 @@
-import realTimeARFeedback from './img/realTimeARFeedback.png';
+import realTimeARFeedback from './img/Haihan1.png';
 import progressTracking from './img/progressTracking.png';
 import expertGuidedRecovery from './img/expertGuidedRecovery.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
