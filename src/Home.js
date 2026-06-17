@@ -9,7 +9,6 @@ function Home() {
     <div>
       <Container>
       <div><IntroBanner /></div>
-      <div className='p-4 mb-1'><EmbedVideo youtubeEmbedCode={'dZJAAmF_aQg'} /></div>
       <div className='p-4 mb-1'><Features /></div>
       </Container>
     </div>
