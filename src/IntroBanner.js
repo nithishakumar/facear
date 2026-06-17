@@ -18,7 +18,7 @@ function IntroBanner() {
             <h1 className='text-center text-lg-start'><b>Augmented Reality for <span className='gradient-text'>Facial Rehabilitation.</span></b></h1>
           </Col>
           <Col className="col-auto">
-            <Image className='pt-2' src={useCase1} width="468" height="658" style={{ objectFit: 'cover' }} fluid />
+            <Image className='pt-2 anisha-image' src={useCase1} width="468" height="658" style={{ objectFit: 'cover' }} fluid />
           </Col>
         </Row>
       </Container>
@@ -27,15 +27,11 @@ function IntroBanner() {
           <Col md={6} className="mb-4">
             <div className="card container-bg">
               <div className="card-body">
-                <div className="text-center card-title card-title-color fs-4">Funded by</div>
+                <div className="text-center card-title card-title-color fs-4">Previously Funded by</div>
 
                 <div className="d-flex justify-content-center align-items-center gap-4 flex-wrap">
                   <Link to="https://ar.snap.com/" target="_blank" rel="noopener noreferrer">
                     <Image src={Snap} width="280" fluid />
-                  </Link>
-
-                  <Link to="https://www.michiganmedicine.org/" target="_blank" rel="noopener noreferrer">
-                    <Image src={MichiganMedicine} width="280" fluid />
                   </Link>
                 </div>
               </div>
