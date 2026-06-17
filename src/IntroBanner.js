@@ -18,7 +18,7 @@ function IntroBanner() {
             <h1 className='text-center text-lg-start'><b>Augmented Reality for <span className='gradient-text'>Facial Rehabilitation.</span></b></h1>
           </Col>
           <Col className="col-auto">
-            <Image className='pt-2 anisha-image' src={useCase1} width="468" height="658" style={{ objectFit: 'cover' }} fluid />
+            <Image className='pt-2' src={useCase1} width="468" height="658" style={{ objectFit: 'cover' }} fluid />
           </Col>
         </Row>
       </Container>

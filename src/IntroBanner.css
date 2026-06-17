@@ -17,9 +17,3 @@
   align-items: center;
   justify-content: center;
 }
-
-.anisha-image {
-  filter: brightness(1.2) contrast(1.1);
-  /* This won't fully remove black but will lighten it */
-  /* For true transparency, edit the PNG file */
-}
