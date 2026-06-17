@@ -16,7 +16,7 @@ export type LensConfig = {
 
 export const lensConfigs: Record<string, LensConfig> = {
   basic: {
-    lensID: "5058c76c-aee8-4cc7-8e51-e01296bada26",
+    lensID: "fd68fd9c-c7a4-4ab2-84dd-d48a59e4bb67",
     name: "Basic Lens",
     description: "In this exercise, you will have three sample facial exercises to explore FaceAR features using your WebCam. After starting the exercise, you can adjust your difficulty level and switch to unilateral mode in the setting panel.",
     features: {
@@ -35,7 +35,7 @@ export const lensConfigs: Record<string, LensConfig> = {
     ]
   },
   jumpGame: {
-    lensID: "130c0784-542d-4ce5-84a2-4f190a082587",
+    lensID: "0b504864-00df-4321-8fdf-0c86bd5bcfaa",
     name: "Jump Game",
     description: "In this exercise, you will play a jump game using your facial expressions. You can jump by raising your eyebrows. Try to avoid the obstacles! You can adjust the difficulty level, game speed, and select the available exercises in the setting panel.",
     features: {
@@ -76,7 +76,7 @@ export const lensConfigs: Record<string, LensConfig> = {
     ]
   },
     timerEyes: {
-        lensID: "c1cc7ddb-5453-4c4c-b21a-fa1d043dca50",
+        lensID: "7820a910-bbc8-4cec-9f3a-a64c69440d3d",
         name: "Timer Exercise for Eyes",
         description: "In this exercise, you will perform a timed eyes exercise. You need to focus on sustained facial expressions and muscle endurance. After starting the exercise, you can adjust your difficulty level, switch to unilateral mode, and select the available exercises in the setting panel.",
         features: {
@@ -95,7 +95,7 @@ export const lensConfigs: Record<string, LensConfig> = {
         ]
     },
     timerMouth: {
-        lensID: "d4da7440-1b51-466f-860e-d8fee53215c5",
+        lensID: "b3e1cbdf-a2a1-4a40-a1b9-1f16d8572ac9",
         name: "Timer Exercise for Mouth",
         description: "In this exercise, you will perform a timed mouth exercise. You need to focus on sustained facial expressions and muscle endurance. After starting the exercise, you can adjust your difficulty level, switch to unilateral mode, and select the available exercises in the setting panel.",
         features: {
