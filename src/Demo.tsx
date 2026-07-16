@@ -27,29 +27,30 @@ function Demo({ config }: DemoProps) {
         completedReps?: number;
     };
 
-    const [lensData, setLensData] = useState<LensData | null>(null);
-    const [difficulty, setDifficulty] = useState("0.5");
-    const [minDifficulty, setMinDifficulty] = useState(0.5);
-    const [isStarted, setIsStarted] = useState(false);
-    const [isLeftOn, setIsLeftOn] = useState(true);
-    const [isRightOn, setIsRightOn] = useState(true);
-    const [isRecording, setIsRecording] = useState(false);
-    const [tooltipPosition, setTooltipPosition] = useState({ left: "50%" });
-    const [exerciseType, setExerciseType] = useState("timer"); // Default exercise type
-    const [exerciseDuration, setExerciseDuration] = useState("10"); // Default timer value in seconds
-    const [reps, setReps] = useState("5"); // Default number of reps
-    const [sets, setSets] = useState("3"); // Default number of sets
-    const [selectedExercise, setSelectedExercise] = useState(
-        availableExercises?.[0] || ""
-    );
-    const [selectedExerciseIndex, setSelectedExerciseIndex] = useState(0);
-    const [recordingTime, setRecordingTime] = useState(0);
-    const [showRedCircle, setShowRedCircle] = useState(false);
-    const [gameSpeed, setGameSpeed] = useState("0.5");
-    const [speedtipPosition, setSpeedTipPosition] = useState({ left: "50%" });
-    const liveRenderTarget = document.getElementById(
-        "canvas"
-    ) as HTMLCanvasElement;
+  const [lensData, setLensData] = useState<LensData | null>(null);
+  const [difficulty, setDifficulty] = useState("0.5");
+  const [minDifficulty, setMinDifficulty] = useState(0);
+  const [isStarted, setIsStarted] = useState(false);
+  const [isLeftOn, setIsLeftOn] = useState(true);
+  const [isRightOn, setIsRightOn] = useState(true);
+  const [isRecording, setIsRecording] = useState(false);
+  const [hasConfirmed, setHasConfirmed] = useState(false);
+  const [hasApplied, setHasApplied] = useState(false);
+  const [exerciseType, setExerciseType] = useState("timer"); // Default exercise type
+  const [exerciseDuration, setExerciseDuration] = useState("10"); // Default timer value in seconds
+  const [reps, setReps] = useState("5"); // Default number of reps
+  const [sets, setSets] = useState("3"); // Default number of sets
+  const [selectedExercise, setSelectedExercise] = useState(
+    availableExercises?.[0] || ""
+  );
+  const [selectedExerciseIndex, setSelectedExerciseIndex] = useState(0);
+  const [recordingTime, setRecordingTime] = useState(0);
+  const [showRedCircle, setShowRedCircle] = useState(false);
+  const [gameSpeed, setGameSpeed] = useState("0.5");
+  const [speedtipPosition, setSpeedTipPosition] = useState({ left: "50%" });
+  const liveRenderTarget = document.getElementById(
+    "canvas"
+  ) as HTMLCanvasElement;
 
     const videoContainer = document.getElementById(
         "video-container"
@@ -78,19 +79,23 @@ function Demo({ config }: DemoProps) {
     const downloadButtonRef = useRef<HTMLButtonElement | null>(null);
     let mediaRecorder: MediaRecorder;
 
-    useEffect(() => {
-        let cleanup: (() => void) | undefined;
+  useEffect(() => {
+    let cleanup: (() => void) | undefined;
 
-        const dataHandlers = {
-            setDifficulty: (value: string) => {
-                setDifficulty(Math.max(0, parseFloat(value) + 0.05).toString());
-                setMinDifficulty(Math.max(0, parseFloat(value) + 0.05));
+    const clampDifficulty = (value: number, min = minDifficulty) => {
+      const clamped = Math.min(1, Math.max(min, value));
+      return Number(clamped.toFixed(2));
+    };
 
-                const sliderWidth = 200;
-                const thumbPosition = (+value - minDifficulty) * sliderWidth / (1 - minDifficulty);
-                setTooltipPosition({ left: `${thumbPosition}px` });
-            }
-        };
+    const dataHandlers = {
+      setDifficulty: (value: string) => {
+        const numeric = Math.max(0, parseFloat(value) + 0.05);
+        const newMin = Math.max(0, parseFloat(value) + 0.05);
+        const rounded = clampDifficulty(numeric, newMin);
+        setDifficulty(rounded.toString());
+        setMinDifficulty(newMin);
+      }
+    };
 
         renderAR(setLensData, lensID, dataHandlers).then((fn) => {
             cleanup = fn;
@@ -116,18 +121,31 @@ function Demo({ config }: DemoProps) {
         return () => clearTimeout(timer);
     }, [isStarted]); // Add isStarted as dependency so it rebinds when buttons become visible
 
-    const handleStart = () => {
-        setIsStarted(true);
-    };
+  const handleStart = () => {
+    setIsStarted(true);
+  };
 
-    const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const input = event.target;
-        setDifficulty(input.value);
-        // Update tooltip position based on slider's thumb
-        const sliderWidth = input.offsetWidth;
-        const thumbPosition = (+input.value - 0.5) * sliderWidth;
-        setTooltipPosition({ left: `${thumbPosition}px` });
-    };
+  const isApplyDisabled = !hasConfirmed || hasApplied;
+
+  const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const input = event.target;
+    const numeric = parseFloat(input.value);
+    const formatted = Number(Math.min(1, Math.max(minDifficulty, numeric)).toFixed(2));
+    setDifficulty(formatted.toString());
+  };
+
+  const handleDifficultyInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const val = event.target.value;
+    const numeric = parseFloat(val);
+    if (Number.isNaN(numeric)) {
+      setDifficulty(val);
+      return;
+    }
+
+    const clamped = Math.min(1, Math.max(minDifficulty, numeric));
+    const rounded = Number(clamped.toFixed(2)).toString();
+    setDifficulty(rounded);
+  };
 
     const handleToggleSide = (side: "left" | "right") => {
         if (side === "left") {
@@ -182,17 +200,26 @@ function Demo({ config }: DemoProps) {
     };
 
 
-    const handleUpdate = () => {
-        console.log("Settings updated:", {
-            difficulty,
-            exerciseType,
-            exerciseDuration,
-            reps,
-            sets,
-            isLeftOn,
-            isRightOn,
-        });
-    };
+  const handleUpdate = () => {
+    console.log("Settings updated:", {
+      difficulty,
+      exerciseType,
+      exerciseDuration,
+      reps,
+      sets,
+      isLeftOn,
+      isRightOn,
+    });
+  };
+
+  const handleConfirmClick = () => {
+    setHasConfirmed(true);
+  };
+
+  const handleApplyClick = () => {
+    if (isApplyDisabled) return;
+    setHasConfirmed(false);
+  };
 
     async function init() {
         const cameraKit = await bootstrapCameraKit({
@@ -455,89 +482,64 @@ function Demo({ config }: DemoProps) {
 
                         <hr className="separator" />
 
-                        {/* Exercise Selection Dropdown - Add this FIRST in the settings */}
-                        {features.showExerciseSelection &&
-                            availableExercises &&
-                            availableExercises.length > 0 && (
-                                <div>
-                                    <Form.Group controlId="exerciseSelection" className="mb-3">
-                                        <Form.Label>
-                                            <b>
-                                                Select{" "}
-                                                {features.exerciseTypes.includes("game")
-                                                    ? "Game"
-                                                    : "Exercise"}
-                                            </b>
-                                        </Form.Label>
-
-                                        <Form.Select
-                                            value={selectedExercise}
-                                            onChange={handleExerciseSelectionChange}
-                                        >
-                                            {availableExercises.map((exercise, index) => (
-                                                <option key={exercise} value={exercise}>
-                                                    {index + 1}. {exercise}
-                                                </option>
-                                            ))}
-                                        </Form.Select>
-
-                                        <Form.Text className="text-muted">
-                                            Choose the specific{" "}
-                                            {features.exerciseTypes.includes("game")
-                                                ? "game"
-                                                : "exercise"}{" "}
-                                            you want to perform
-                                        </Form.Text>
-                                    </Form.Group>
-
-                                    <hr className="separator" />
-                                </div>
-                            )}
-
-                        <OverlayTrigger
-                            placement="top"
-                            overlay={
-                                <Tooltip id="tooltip-top">
-                                    <div
-                                        style={{
-                                            position: "absolute",
-                                            top: "-30px",
-                                            left: tooltipPosition.left,
-                                            color: "#000",
-                                            padding: "5px",
-                                            borderRadius: "5px",
-                                        }}
-                                    >
-                                        {difficulty}
-                                    </div>
-                                </Tooltip>
-                            }
-                        >
-                            <Form.Range
-                                id="myDifficulty"
-                                min={minDifficulty}
-                                max={1}
-                                step={0.1}
-                                value={difficulty}
-                                onChange={handleSliderChange}
-                            />
-                        </OverlayTrigger>
-
-                        <Form.Label className="difficulty-label">
-                            Difficulty
-                            <OverlayTrigger
-                                placement="top"
-                                overlay={
-                                    <Tooltip id="tooltip-top">
-                                        Adjusts the difficulty value of the AR lens detection.
-                                    </Tooltip>
-                                }
-                            >
-                                <span className="difficulty-infoIcon">
-                                    &#9432;
-                                </span>
-                            </OverlayTrigger>
-                        </Form.Label>
+            {features.showExerciseSelection && 
+             availableExercises && 
+             availableExercises.length > 0 && (
+              <div>
+                <Form.Group controlId="exerciseSelection" className="mb-3">
+                  <Form.Label>
+                    <b>Select {features.exerciseTypes.includes("game") ? "Game" : "Exercise"}</b>
+                  </Form.Label>
+                  <Form.Select
+                    value={selectedExercise}
+                    onChange={handleExerciseSelectionChange}
+                  >
+                    {availableExercises.map((exercise, index) => (
+                      <option key={exercise} value={exercise}>
+                        {index + 1}. {exercise}
+                      </option>
+                    ))}
+                  </Form.Select>
+                  <Form.Text className="text-muted">
+                    Choose the specific {features.exerciseTypes.includes("game") ? "game" : "exercise"} you want to perform
+                  </Form.Text>
+                </Form.Group>
+                <hr className="separator" />
+              </div>
+            )}
+            <Form.Range
+              id="myDifficulty"
+              min={0}
+              max={1}
+              step={0.01}
+              value={difficulty}
+              onChange={handleSliderChange}
+            />
+            <Form.Control
+              id="myDifficultyInput"
+              type="number"
+              min={0}
+              max={1}
+              step={0.01}
+              value={difficulty}
+              onChange={handleDifficultyInputChange}
+              className="mt-2"
+            />
+            <Form.Label className="difficulty-label">
+              Difficulty
+              <OverlayTrigger
+                placement="top"
+                overlay={
+                  <Tooltip id="tooltip-top">
+                    Adjusts the difficulty value of the AR lens detection.
+                  </Tooltip>
+                }
+              >
+                <span className="difficulty-infoIcon">
+                  &#9432; {/* Unicode for a small 'info' symbol */}
+                </span>
+              </OverlayTrigger>
+            </Form.Label>
 
                         <hr className="separator" />
 
@@ -679,36 +681,62 @@ function Demo({ config }: DemoProps) {
                                         <div className="switch-label">Left</div>
                                     </Col>
 
-                                    <Col xs={6}>
-                                        <Form.Check
-                                            type="switch"
-                                            id="rightSwitch"
-                                            checked={isRightOn}
-                                            onChange={() => handleToggleSide("right")}
-                                            className="custom-switch mt-3"
-                                        />
-                                        <div className="switch-label">
-                                            Right
-                                            <OverlayTrigger
-                                                placement="top"
-                                                overlay={
-                                                    <Tooltip id="tooltip-top">
-                                                        Adjusts the bilateral setting of the lens
-                                                    </Tooltip>
-                                                }
-                                            >
-                                                <span className="switch-infoIcon">
-                                                    &#9432;
-                                                </span>
-                                            </OverlayTrigger>
-                                        </div>
-                                    </Col>
-                                </Row>
+                  <Col xs={6}>
+                    <Form.Check
+                      type="switch"
+                      id="rightSwitch"
+                      checked={isRightOn}
+                      onChange={() => handleToggleSide("right")}
+                      className="custom-switch mt-3"
+                    />
+                    <div className="switch-label">
+                      Right
+                      <OverlayTrigger
+                        placement="top"
+                        overlay={
+                          <Tooltip id="tooltip-top">
+                            Adjusts the bilateral setting of the lens
+                          </Tooltip>
+                        }
+                      >
+                        <span className="switch-infoIcon">&#9432;</span>
+                      </OverlayTrigger>
+                    </div>
+                  </Col>
+                </Row>
+                <hr className="separator" />
+              </div>
+            )}
 
-                                <hr className="separator" />
-                            </div>
-                        )}
-                    </Col>
+            {/* Confirm and Reinit Buttons */}
+            <div className="d-flex justify-content-between mt-4">
+              <Button
+                id="reinitButton"
+                variant="secondary"
+                disabled={isApplyDisabled}
+                onClick={handleApplyClick}
+                style={{
+                  backgroundColor: isApplyDisabled ? "#9ca3af" : "#6c757d",
+                  borderColor: isApplyDisabled ? "#9ca3af" : "#6c757d",
+                  color: "white",
+                }}
+              >
+                Apply
+              </Button>
+              <Button
+                id="confirmButton"
+                variant="primary"
+                onClick={handleConfirmClick}
+                style={{
+                  backgroundColor: "#0284c7",
+                  borderColor: "#2563eb",
+                  color: "white",
+                }}
+              >
+                Confirm
+              </Button>
+            </div>
+          </Col>
 
                     <Col md={8} className="text-center">
                         <div

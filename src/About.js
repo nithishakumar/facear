@@ -116,7 +116,7 @@ function Problems() {
       <Container className='px-4'> 
         <Container className="d-flex align-items-center justify-content-center about-banner">
           <h1 className="text-center font-weight-bold">
-            <b>FaceAR is a mobile AR app <span className='gradient-text'>with potential to revolutionize </span> 
+            <b>FaceAR is a WebAR app <span className='gradient-text'>with potential to revolutionize </span> 
             the facial rehabilitation space.</b>
           </h1>
         </Container>
@@ -159,7 +159,7 @@ function Problems() {
                     <div className='fs-4 outer-card-text-color'>
                     What started as a capstone project for a college course is now being further developed and 
                     tested in the University of Michigan's <Link to="https://neurro-lab.engin.umich.edu/" 
-                    className='outer-card-text-color' target="_blank" rel="noopener noreferrer">NeuRRo Lab</Link> under the supervision of Dr. Chandramouli Krishnan with funding from Snap, Inc.<br/> 
+                    className='outer-card-text-color' target="_blank" rel="noopener noreferrer">NeuRRo Lab</Link> under the supervision of Dr. Chandramouli Krishnan with funding from both Snap, Inc and Michigan Medicine.<br/> 
                     The FaceAR team is iteratively improving the app by actively applying feedback on the app from facial 
                     disorder patients at Michigan Medicine.
                     </div>
